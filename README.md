@@ -13,8 +13,9 @@
 <p align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&customColorList=6,11,20&text=⚔️%20GAMING%20ZONE%20⚔️&fontSize=50&fontAlignY=35&desc=Anime%20•%20Gaming%20•%20Code&descAlignY=55&animation=twinkling">
 
+<div align="center">
 <p align="left">
 <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="100px" height="100px">
 <p align="right">
 <a href="https://open.spotify.com/"><img src="https://raw.githubusercontent.com/trinib/spotify-github-profile/master/img/default.svg" height="130" width="300"></a>
-
+</div>
