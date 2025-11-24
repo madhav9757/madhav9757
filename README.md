@@ -53,22 +53,38 @@
 
 <div align="center">
 
-### **Frontend**
-<img src="https://skillicons.dev/icons?i=react,nextjs,ts,redux,css,html&perline=10" />
+## 🟦 **Languages**
+<img src="https://skillicons.dev/icons?i=js,ts,python,java,cpp,go,html,css&perline=12" />
 
-### **Backend**
-<img src="https://skillicons.dev/icons?i=nodejs,express&perline=10" />
-
-### **Databases**
-<img src="https://skillicons.dev/icons?i=mongodb,postgres&perline=10" />
-
-### **Cloud & DevOps**
-<img src="https://skillicons.dev/icons?i=aws,docker,git,github&perline=10" />
-
-### **AI / GenAI**
-<img src="https://skillicons.dev/icons?i=python&perline=10" />
+## 🟩 **Frontend**
+<img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,bootstrap,figma,materialui&perline=12" />
 <br/>
-<b>OpenAI APIs · Gemini APIs · Prompt Engineering · LangChain (concepts)</b>
+<b>Framer Motion · ShadCN UI · Responsive UI · Animations · Theming</b>
+
+## 🟧 **Backend**
+<img src="https://skillicons.dev/icons?i=nodejs,express&perline=12" />
+<br/>
+<b>REST APIs · Authentication · WebSockets (Socket.io) · Modular Routing</b>
+
+## 🟨 **Databases**
+<img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,firebase,sqlite&perline=12" />
+<br/>
+<b>Cloudinary · Firebase Storage · NoSQL/SQL Data Modeling</b>
+
+## 🟥 **Cloud & DevOps**
+<img src="https://skillicons.dev/icons?i=aws,docker,git,github,nginx,vercel,render&perline=12" />
+<br/>
+<b>AWS S3 · AWS EC2 · GitHub Actions (CI/CD)</b>
+
+## 🟪 **AI / GenAI**
+<img src="https://skillicons.dev/icons?i=python&perline=12" />
+<br/>
+<b>OpenAI API · Gemini API · Prompt Engineering · LangChain (concepts) · AI UI Workflows</b>
+
+## 🟫 **Tools**
+<img src="https://skillicons.dev/icons?i=vscode,postman,linux,bash,windows&perline=12" />
+<br/>
+<b>Google Drive API · Audio Streaming APIs · JWT Auth Tools</b>
 
 </div>
 
