@@ -12,7 +12,7 @@
 
 <div align="center">
 
-<table>
+<table style="border: none; border-collapse: collapse;">
 <tr>
 <td width="260">
 <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="100%"/>
@@ -54,40 +54,50 @@
 <div align="center">
 
 ## 🟦 **Languages**
-<img src="https://skillicons.dev/icons?i=js,ts,python,java,cpp,go,html,css&perline=12" />
 
-## 🟩 **Frontend**
+<img src="https://skillicons.dev/icons?i=js,ts,python,java,cpp,go,html,css&perline=12" />
+<br/>
+<b>Advanced:</b> <b>Functional Programming (JS/TS)</b> · <b>Type Safety</b> with TypeScript · Python for <b>Data/AI</b>
+
+## 🟩 **Frontend & UI/UX**
+
 <img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,bootstrap,figma,materialui&perline=12" />
 <br/>
-<b>Framer Motion · ShadCN UI · Responsive UI · Animations · Theming</b>
+<b>Focus:</b> <b>Framer Motion</b> · <b>ShadCN UI</b> · <b>Responsive UI</b> · <b>Progressive Web Apps (PWA)</b> · <b>A/B Testing Integration</b>
 
-## 🟧 **Backend**
-<img src="https://skillicons.dev/icons?i=nodejs,express&perline=12" />
-<br/>
-<b>REST APIs · Authentication · WebSockets (Socket.io) · Modular Routing</b>
+## 🟧 **Backend & Architecture**
 
-## 🟨 **Databases**
-<img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,firebase,sqlite&perline=12" />
+<img src="https://skillicons.dev/icons?i=nodejs,express,nestjs,graphql,socketio&perline=12" />
 <br/>
-<b>Cloudinary · Firebase Storage · NoSQL/SQL Data Modeling</b>
+<b>Advanced:</b> <b>RESTful APIs</b> · <b>GraphQL</b> (Query Language) · <b>Authentication</b> (JWT, OAuth) · <b>Real-Time Systems</b> (<b>Socket.io</b>) · <b>Microservices</b> (Conceptual)
 
-## 🟥 **Cloud & DevOps**
-<img src="https://skillicons.dev/icons?i=aws,docker,git,github,nginx,vercel,render&perline=12" />
-<br/>
-<b>AWS S3 · AWS EC2 · GitHub Actions (CI/CD)</b>
+## 🟨 **Databases & Caching**
 
-## 🟪 **AI / GenAI**
-<img src="https://skillicons.dev/icons?i=python&perline=12" />
+<img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,firebase,sqlite,redis&perline=12" />
 <br/>
-<b>OpenAI API · Gemini API · Prompt Engineering · LangChain (concepts) · AI UI Workflows</b>
+<b>Focus:</b> <b>Redis</b> (Caching/Rate Limiting) · <b>NoSQL/SQL Data Modeling</b> · <b>Cloudinary</b> (Media Management) · <b>Data Integrity</b>
 
-## 🟫 **Tools**
-<img src="https://skillicons.dev/icons?i=vscode,postman,linux,bash,windows&perline=12" />
+## 🟥 **Cloud, DevOps, & Infrastructure**
+
+<img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,git,github,nginx,vercel,render&perline=12" />
 <br/>
-<b>Google Drive API · Audio Streaming APIs · JWT Auth Tools</b>
+<b>Advanced:</b> <b>Kubernetes</b> (Concepts) · <b>AWS S3/EC2</b> · <b>CI/CD</b> (<b>GitHub Actions</b>) · <b>Serverless Functions</b> (Next.js/Vercel)
+
+## 🟪 **AI / GenAI Engineering**
+
+<img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch&perline=12" />
+<br/>
+<b>Focus:</b> <b>OpenAI API</b> · <b>Gemini API</b> · <b>Prompt Engineering</b> · <b>Retrieval Augmented Generation (RAG)</b> (Concepts) · <b>AI Agents</b> (Concepts)
+
+## 🟫 **Tools & Utilities**
+
+<img src="https://skillicons.dev/icons?i=vscode,postman,linux,bash,windows,npm&perline=12" />
+<br/>
+<b>Added:</b> <b>npm/yarn</b> (Package Management) · <b>Git Workflow</b> · <b>Postman/Insomnia</b> (API Testing)
 
 </div>
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=100&section=footer" width="100%" />
 </div>
+
