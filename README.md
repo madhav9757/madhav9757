@@ -85,9 +85,9 @@
 
 ## 🟪 **AI / GenAI Engineering**
 
-<img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch&perline=12" />
+<img src="https://skillicons.dev/icons?i=js,ts,python,tensorflow,pytorch,langchain,huggingface&perline=12" />
 <br/>
-<b>Focus:</b> <b>OpenAI API</b> · <b>Gemini API</b> · <b>Prompt Engineering</b> · <b>Retrieval Augmented Generation (RAG)</b> (Concepts) · <b>AI Agents</b> (Concepts)
+<b>Focus:</b> <b>OpenAI API</b> · <b>Gemini API</b> · <b>Prompt Engineering</b> · <b>AI UI Workflows</b> · <b>LangChain Concepts</b> · <b>Hugging Face (Explored)</b>
 
 ## 🟫 **Tools & Utilities**
 
@@ -100,4 +100,3 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=100&section=footer" width="100%" />
 </div>
-
