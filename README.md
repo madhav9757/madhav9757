@@ -16,12 +16,12 @@
       </td>
       <td width="40" style="border: none;"></td>
       <td align="left" style="border: none; vertical-align: middle;">
-        <h2>✨ About Me</h2>
-        <p>🚀 <b>Full Stack Developer</b> — React • Next.js • Node.js</p>
-        <p>🤖 <b>GenAI Engineer</b> — OpenAI • Gemini • LangChain</p>
-        <p>☁️ <b>Infrastructure</b> — AWS • Docker • CI/CD Actions</p>
-        <p>☕ <b>Vibe</b> — India 🇮🇳 • Anime Lover • Gaming</p>
-        <p>🎯 <b>Focus</b> — Scalable Architecture & Intelligent UIs</p>
+        <h2><img src="static/sparkles.svg" width="25" /> About Me</h2>
+        <p><img src="static/rocket.svg" width="20" height="20" /> <b>Full Stack Developer</b> — React • Next.js • Node.js</p>
+        <p><img src="static/cpu.svg" width="20" height="20" /> <b>GenAI Engineer</b> — OpenAI • Gemini • LangChain</p>
+        <p><img src="static/cloud.svg" width="20" height="20" /> <b>Infrastructure</b> — AWS • Docker • CI/CD Actions</p>
+        <p><img src="static/coffee.svg" width="20" height="20" /> <b>Vibe</b> — India 🇮🇳 • Anime Lover • Gaming</p>
+        <p><img src="static/target.svg" width="20" height="20" /> <b>Focus</b> — Scalable Architecture & Intelligent UIs</p>
       </td>
     </tr>
   </table>
@@ -40,7 +40,7 @@
 
 <div align="center">
 
-## 🛠️ **Technical Arsenal**
+## <img src="static/hammer.svg" width="28" /> **Technical Arsenal**
 
 <table style="border: none; width: 100%; max-width: 900px;">
   <tr>
@@ -70,7 +70,7 @@
 <br/>
 
 <div align="center">
-  <h2>📊 GitHub Insights</h2>
+  <h2><img src="static/trending-up.svg" width="28" /> GitHub Insights</h2>
   <table style="border: none; border-collapse: collapse;">
     <tr>
       <td style="border: none;">
