@@ -16,24 +16,22 @@
       </td>
       <td width="40" style="border: none;"></td>
       <td align="left" style="border: none; vertical-align: middle;">
-        <h2><img src="static/sparkles.svg" width="25" /> About Me</h2>
-        <p><img src="static/rocket.svg" width="20" height="20" /> <b>Full Stack Developer</b> — React • Next.js • Node.js</p>
-        <p><img src="static/cpu.svg" width="20" height="20" /> <b>GenAI Engineer</b> — OpenAI • Gemini • LangChain</p>
-        <p><img src="static/cloud.svg" width="20" height="20" /> <b>Infrastructure</b> — AWS • Docker • CI/CD Actions</p>
-        <p><img src="static/coffee.svg" width="20" height="20" /> <b>Vibe</b> — India 🇮🇳 • Anime Lover • Gaming</p>
-        <p><img src="static/target.svg" width="20" height="20" /> <b>Focus</b> — Scalable Architecture & Intelligent UIs</p>
+        <h2><img src="static/sparkles.svg" width="25" /> <code>madhav.init()</code></h2>
+        <p><br/><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=7AA2F7&width=435&lines=Full+Stack+Developer;GenAI+Engineer;Infrastructure+Architect;Anime+Lover+%26+Gamer" alt="Typing SVG" /></p>
+        <p><samp><img src="static/map-pin.svg" width="16" height="16" /> <b>Location:</b> India</samp></p>
+        <p><samp><img src="static/target.svg" width="16" height="16" /> <b>Focus:</b> Scalable Architecture %26 Intelligent UIs</samp></p>
       </td>
     </tr>
   </table>
-  <p align="center"><i>"I have 99 problems, and centered divs are 98 of them."</i> 🤡</p>
+  <p align="center"><i><img src="static/quote.svg" width="18" height="18" /> "I have 99 problems, and centered divs are 98 of them."</i></p>
 </div>
 
 <br/>
 
 <div align="center" style="max-width: 800px; margin: 0 auto;">
-  <p style="font-size: 1.15em; line-height: 1.7; color: #a9b1d6;">
-    Motivated developer building <b>scalable real-time applications</b> with modern tech stacks. 
-    Specializing in <b>Generative AI integration</b>, cloud deployments, and high-performance WebSockets.
+  <p>
+    <code>❯ Building scalable real-time applications with modern tech stacks</code><br/>
+    <code>❯ Specializing in Generative AI, Cloud, and high-performance WebSockets</code>
   </p>
 </div>
 
