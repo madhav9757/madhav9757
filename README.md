@@ -1,7 +1,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=150&section=header&text=MADHAV%20DEVELOPER&fontSize=50&fontAlignY=35&animation=fadeIn" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=150&section=header&text=TURNING%20COFFEE%20INTO%20CODE&fontSize=50&fontAlignY=35&animation=fadeIn" width="100%" />
 </div>
 
 <p align="center">
@@ -25,6 +25,7 @@
       </td>
     </tr>
   </table>
+  <p align="center"><i>"I have 99 problems, and centered divs are 98 of them."</i> 🤡</p>
 </div>
 
 <br/>
