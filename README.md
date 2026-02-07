@@ -1,5 +1,7 @@
+<br/>
+
 <div align="center">
-  <img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" height="250" alt="Intro GIF" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=150&section=header&text=MADHAV%20DEVELOPER&fontSize=50&fontAlignY=35&animation=fadeIn" width="100%" />
 </div>
 
 <p align="center">
@@ -97,9 +99,19 @@
 </p>
 
 <div align="center">
-  <h3>📊 GitHub Activity</h3>
-  <img src="https://github-readme-stats.vercel.app/api?username=madhav9757&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=madhav9757&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
+  <h3>📊 GitHub Statistics</h3>
+  <table style="border: none; border-collapse: collapse;">
+    <tr>
+      <td style="border: none;">
+        <img src="https://github-readme-stats.vercel.app/api?username=madhav9757&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=1800" alt="GitHub Stats" />
+      </td>
+      <td style="border: none;">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=madhav9757&theme=tokyonight&hide_border=true&cache_seconds=1800" alt="GitHub Streak" />
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=madhav9757&layout=compact&theme=tokyonight&hide_border=true&langs_count=10&cache_seconds=1800" alt="Top Languages" />
 </div>
 
 <br/>
