@@ -70,10 +70,13 @@
 
 <div align="center">
   <h2><img src="static/trending-up.svg" width="28" /> GitHub Insights</h2>
+  <p align="center">
+    <img src="https://komarev.com/ghpvc/?username=madhav9757&color=7aa2f7&style=flat-square&label=PROFILE+VIEWS" alt="Visitor Count" />
+  </p>
   <table style="border: none; border-collapse: collapse;">
     <tr>
       <td style="border: none;">
-        <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=madhav9757&theme=tokyonight" height="200" />
+        <img src="static/github-stats.svg" height="200" />
       </td>
       <td style="border: none;">
         <img src="https://github-readme-streak-stats.herokuapp.com/?user=madhav9757&theme=tokyonight&hide_border=true" height="200" />
@@ -84,10 +87,10 @@
   <table style="border: none; border-collapse: collapse;">
     <tr>
       <td style="border: none; padding: 5px;">
-        <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=madhav9757&theme=tokyonight" height="200" />
+        <img src="static/top-langs.svg" height="200" />
       </td>
       <td style="border: none; padding: 5px;">
-        <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=madhav9757&theme=tokyonight&utcOffset=5.5" height="200" />
+        <img src="static/productive-time.svg" height="200" />
       </td>
     </tr>
   </table>
