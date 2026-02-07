@@ -5,14 +5,14 @@
 </div>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%" height="20" />
+  <img src="static/divider.gif" width="100%" height="20" />
 </p>
 
 <div align="center">
   <table style="border: none; border-collapse: collapse; margin: 10px 0;">
     <tr>
       <td width="280" align="center" style="border: none; vertical-align: middle;">
-        <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+        <img src="static/intro.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
       </td>
       <td width="40" style="border: none;"></td>
       <td align="left" style="border: none; vertical-align: middle;">
@@ -46,21 +46,21 @@
   <tr>
     <td align="center" style="border: none; padding: 15px;">
       <b>Frontend</b><br/>
-      <img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,framer,figma,materialui&perline=7" />
+      <img src="static/react.svg" width="45" /> <img src="static/nextjs.svg" width="45" /> <img src="static/redux.svg" width="45" /> <img src="static/tailwind.svg" width="45" /> <img src="static/framer.svg" width="45" /> <img src="static/figma.svg" width="45" /> <img src="static/materialui.svg" width="45" />
     </td>
     <td align="center" style="border: none; padding: 15px;">
       <b>Backend</b><br/>
-      <img src="https://skillicons.dev/icons?i=nodejs,express,nestjs,graphql,socketio&perline=5" />
+      <img src="static/nodejs.svg" width="45" /> <img src="static/express.svg" width="45" /> <img src="static/nestjs.svg" width="45" /> <img src="static/graphql.svg" width="45" /> <img src="static/socketio.svg" width="45" />
     </td>
   </tr>
   <tr>
     <td align="center" style="border: none; padding: 15px;">
       <b>Languages</b><br/>
-      <img src="https://skillicons.dev/icons?i=js,ts,java,cpp,go,html,css&perline=7" />
+      <img src="static/js.svg" width="45" /> <img src="static/ts.svg" width="45" /> <img src="static/java.svg" width="45" /> <img src="static/cpp.svg" width="45" /> <img src="static/go.svg" width="45" /> <img src="static/html.svg" width="45" /> <img src="static/css.svg" width="45" />
     </td>
     <td align="center" style="border: none; padding: 15px;">
       <b>Database & Cloud</b><br/>
-      <img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,redis,aws,docker,github&perline=7" />
+      <img src="static/mongodb.svg" width="45" /> <img src="static/postgres.svg" width="45" /> <img src="static/mysql.svg" width="45" /> <img src="static/redis.svg" width="45" /> <img src="static/aws.svg" width="45" /> <img src="static/docker.svg" width="45" /> <img src="static/github.svg" width="45" />
     </td>
   </tr>
 </table>
