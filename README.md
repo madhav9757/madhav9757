@@ -1,7 +1,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=150&section=header&text=TURNING%20COFFEE%20INTO%20CODE&fontSize=50&fontAlignY=35&animation=fadeIn" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=150&section=header&text=TURNING%20COFFEE%20INTO%20CODE&fontSize=50&fontAlignY=35&animation=fadeIn&font=Righteous" width="100%" />
 </div>
 
 <p align="center">
@@ -9,21 +9,30 @@
 </p>
 
 <div align="center">
-  <table style="border: none; border-collapse: collapse; margin: 10px 0;">
+  <table style="border: none; border-collapse: collapse; margin: 20px 0;">
     <tr>
-      <td width="280" align="center" style="border: none; vertical-align: middle;">
-        <img src="static/intro.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+      <td width="320" align="center" style="border: none; vertical-align: middle;">
+        <img src="static/intro.gif" width="100%" style="border-radius: 20px; box-shadow: 0 15px 45px rgba(0,0,0,0.5);" />
       </td>
-      <td width="40" style="border: none;"></td>
+      <td width="60" style="border: none;"></td>
       <td align="left" style="border: none; vertical-align: middle;">
-        <h2><img src="static/sparkles.svg" width="25" /> <code>madhav.init()</code></h2>
-        <p><br/><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=7AA2F7&width=435&lines=Full+Stack+Developer;GenAI+Engineer;Infrastructure+Architect;Anime+Lover+%26+Gamer" alt="Typing SVG" /></p>
-        <p><samp><img src="static/map-pin.svg" width="16" height="16" /> <b>Location:</b> India</samp></p>
-        <p><samp><img src="static/target.svg" width="16" height="16" /> <b>Focus:</b> Scalable Architecture %26 Intelligent UIs</samp></p>
+        <p align="left">
+          <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&weight=800&size=38&pause=1500&color=7AA2F7&width=435&lines=Hi,+I'm+Madhav;Crafting+Digital+Magic;Building+the+Future" alt="Madhav" />
+        </p>
+        <p align="left">
+          <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=500&size=20&pause=1000&color=9ECE6A&width=435&lines=Full+Stack+Engineer+%E2%80%A2+GenAI+Architect;Infrastructure+%26+Cloud+Optimization;Turning+Complex+Problems+into+Code" alt="Roles" />
+        </p>
+        <br/>
+        <p align="left">
+          <samp>
+            <img src="static/map-pin.svg" width="18" height="18" /> &nbsp;<b>Residing in:</b> India<br/>
+            <img src="static/target.svg" width="18" height="18" /> &nbsp;<b>Current Focus:</b> AI-Driven SaaS & Scalable Systems
+          </samp>
+        </p>
       </td>
     </tr>
   </table>
-  <p align="center"><i><img src="static/quote.svg" width="18" height="18" /> "I have 99 problems, and centered divs are 98 of them."</i></p>
+  <p align="center"><i><img src="static/quote.svg" width="18" height="18" /> "Crafting experiences that bridge the gap between imagination and reality."</i></p>
 </div>
 
 <br/>
