@@ -17,58 +17,56 @@
       <td width="60" style="border: none;"></td>
       <td align="left" style="border: none; vertical-align: middle;">
         <p align="left">
-          <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&weight=800&size=38&pause=1500&color=7AA2F7&width=435&lines=Hi,+I'm+Madhav;Crafting+Digital+Magic;Building+the+Future" alt="Madhav" />
+          <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&weight=800&size=38&pause=1500&color=7AA2F7&width=435&lines=Senior+Polyglot+Dev;Architecting+Systems;Mastering+The+Stack" alt="Madhav" />
         </p>
         <p align="left">
-          <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=500&size=20&pause=1000&color=9ECE6A&width=435&lines=Full+Stack+Engineer+%E2%80%A2+GenAI+Architect;Infrastructure+%26+Cloud+Optimization;Turning+Complex+Problems+into+Code" alt="Roles" />
+          <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=500&size=20&pause=1000&color=9ECE6A&width=435&lines=Distributed+Systems+%E2%80%A2+Go+%2F+TS+%2F+C%2B%2B;High+Performance+Cloud+Arch;Turning+Complexity+into+Simplicity" alt="Roles" />
         </p>
         <br/>
         <p align="left">
           <samp>
-            <img src="static/map-pin.svg" width="18" height="18" /> &nbsp;<b>Residing in:</b> India<br/>
-            <img src="static/target.svg" width="18" height="18" /> &nbsp;<b>Current Focus:</b> AI-Driven SaaS & Scalable Systems
+            <img src="static/map-pin.svg" width="18" height="18" /> &nbsp;<b>Base:</b> India<br/>
+            <img src="static/target.svg" width="18" height="18" /> &nbsp;<b>Current Stack:</b> Multi-Runtime Microservices
           </samp>
         </p>
       </td>
     </tr>
   </table>
-  <p align="center"><i><img src="static/quote.svg" width="18" height="18" /> "Crafting experiences that bridge the gap between imagination and reality."</i></p>
-</div>
-
-<br/>
-
-<div align="center" style="max-width: 800px; margin: 0 auto;">
-  <p>
-    <code>❯ Building scalable real-time applications with modern tech stacks</code><br/>
-    <code>❯ Specializing in Generative AI, Cloud, and high-performance WebSockets</code>
-  </p>
+  <p align="center"><i><img src="static/terminal.svg" width="18" height="18" /> "Building across paradigms, from bare-metal logic to cloud-native scale."</i></p>
 </div>
 
 <br/>
 
 <div align="center">
 
-## <img src="static/hammer.svg" width="28" /> **Technical Arsenal**
+## <img src="static/cpu.svg" width="28" /> **System Engine Layers**
 
-<table style="border: none; width: 100%; max-width: 900px;">
+<table style="border: none; width: 100%; max-width: 950px;">
   <tr>
-    <td align="center" style="border: none; padding: 15px;">
-      <b>Frontend</b><br/>
-      <img src="static/react.svg" width="45" /> <img src="static/nextjs.svg" width="45" /> <img src="static/redux.svg" width="45" /> <img src="static/tailwind.svg" width="45" /> <img src="static/framer.svg" width="45" /> <img src="static/figma.svg" width="45" /> <img src="static/materialui.svg" width="45" />
+    <td align="left" style="border: none; padding: 15px; background: rgba(122, 162, 247, 0.05); border-radius: 12px; margin: 5px;">
+      <img src="static/go.svg" width="25" /> <b>High Performance Core</b><br/>
+      <p style="font-size: 13px; color: #7AA2F7;">Reliable concurrency & system internals</p>
+      <img src="static/go.svg" width="30" /> <img src="static/cpp.svg" width="30" /> <img src="static/java.svg" width="30" /> <img src="static/rust.svg" width="30" /> <img src="static/docker.svg" width="30" />
     </td>
-    <td align="center" style="border: none; padding: 15px;">
-      <b>Backend</b><br/>
-      <img src="static/nodejs.svg" width="45" /> <img src="static/express.svg" width="45" /> <img src="static/nestjs.svg" width="45" /> <img src="static/graphql.svg" width="45" /> <img src="static/socketio.svg" width="45" />
+    <td width="20" style="border: none;"></td>
+    <td align="left" style="border: none; padding: 15px; background: rgba(158, 238, 106, 0.05); border-radius: 12px; margin: 5px;">
+      <img src="static/ts.svg" width="25" /> <b>Reactive Logic Lab</b><br/>
+      <p style="font-size: 13px; color: #9ECE6A;">Modern orchestration & real-time UI</p>
+      <img src="static/ts.svg" width="30" /> <img src="static/nextjs.svg" width="30" /> <img src="static/nodejs.svg" width="30" /> <img src="static/react.svg" width="30" /> <img src="static/tailwind.svg" width="30" />
     </td>
   </tr>
+  <tr height="10"></tr>
   <tr>
-    <td align="center" style="border: none; padding: 15px;">
-      <b>Languages</b><br/>
-      <img src="static/js.svg" width="45" /> <img src="static/ts.svg" width="45" /> <img src="static/java.svg" width="45" /> <img src="static/cpp.svg" width="45" /> <img src="static/go.svg" width="45" /> <img src="static/html.svg" width="45" /> <img src="static/css.svg" width="45" />
+    <td align="left" style="border: none; padding: 15px; background: rgba(187, 154, 247, 0.05); border-radius: 12px; margin: 5px;">
+      <img src="static/cloud.svg" width="25" /> <b>Distributed Infrastructure</b><br/>
+      <p style="font-size: 13px; color: #BB9AF7;">Scalable persistence & orchestration</p>
+      <img src="static/aws.svg" width="30" /> <img src="static/postgres.svg" width="30" /> <img src="static/redis.svg" width="30" /> <img src="static/mongodb.svg" width="30" /> <img src="static/graphql.svg" width="30" />
     </td>
-    <td align="center" style="border: none; padding: 15px;">
-      <b>Database & Cloud</b><br/>
-      <img src="static/mongodb.svg" width="45" /> <img src="static/postgres.svg" width="45" /> <img src="static/mysql.svg" width="45" /> <img src="static/redis.svg" width="45" /> <img src="static/aws.svg" width="45" /> <img src="static/docker.svg" width="45" /> <img src="static/github.svg" width="45" />
+    <td width="20" style="border: none;"></td>
+    <td align="left" style="border: none; padding: 15px; background: rgba(247, 118, 142, 0.05); border-radius: 12px; margin: 5px;">
+      <img src="static/sparkles.svg" width="25" /> <b>AI & GenAI Integration</b><br/>
+      <p style="font-size: 13px; color: #F7768E;">Neural logic & LLM orchestration</p>
+      <img src="static/python.svg" width="30" /> <img src="static/openai.svg" width="30" /> <img src="static/huggingface.svg" width="30" /> <img src="static/langchain.svg" width="30" />
     </td>
   </tr>
 </table>
@@ -78,31 +76,85 @@
 <br/>
 
 <div align="center">
-  <h2><img src="static/trending-up.svg" width="28" /> GitHub Insights</h2>
+  <h2><img src="static/terminal.svg" width="28" /> **Logical Paradigms**</h2>
+  <p><i>One problem, multiple solutions.</i></p>
+  
+  <table style="border: none; width: 100%; max-width: 950px;">
+    <tr>
+      <td width="33%" style="border: none; padding: 5px;">
+        <div align="center">
+          <img src="static/go.svg" width="30" /><br/><b>Go (Concurrency)</b>
+        </div>
+        <pre align="left" style="background: #1a1b26; padding: 10px; border-radius: 8px; border: 1px solid #7aa2f7;">
+<code style="color: #7aa2f7; font-size: 11px;">
+go func() {
+  results <- process(data)
+}()
+</code></pre>
+      </td>
+      <td width="33%" style="border: none; padding: 5px;">
+        <div align="center">
+          <img src="static/ts.svg" width="30" /><br/><b>TS (Type Safety)</b>
+        </div>
+        <pre align="left" style="background: #1a1b26; padding: 10px; border-radius: 8px; border: 1px solid #9ece6a;">
+<code style="color: #9ece6a; font-size: 11px;">
+type Engine<T> = {
+  process: (d: T) => void
+}
+</code></pre>
+      </td>
+      <td width="33%" style="border: none; padding: 5px;">
+        <div align="center">
+          <img src="static/cpp.svg" width="30" /><br/><b>C++ (Performance)</b>
+        </div>
+        <pre align="left" style="background: #1a1b26; padding: 10px; border-radius: 8px; border: 1px solid #f7768e;">
+<code style="color: #f7768e; font-size: 11px;">
+auto start = now();
+engine.execute();
+log(now() - start);
+</code></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br/>
+
+<div align="center">
+  <h2><img src="static/trending-up.svg" width="28" /> **System Analytics**</h2>
   <p align="center">
-    <img src="https://komarev.com/ghpvc/?username=madhav9757&color=7aa2f7&style=flat-square&label=PROFILE+VIEWS" alt="Visitor Count" />
+    <img src="https://komarev.com/ghpvc/?username=madhav9757&color=7aa2f7&style=flat-square&label=SYSTEM+ACCESSES" alt="Visitor Count" />
   </p>
+  
   <table style="border: none; border-collapse: collapse;">
     <tr>
-      <td style="border: none;">
-        <img src="static/github-stats.svg" height="200" />
+      <td style="border: none; padding: 10px;">
+        <img src="static/github-stats.svg" height="185" />
       </td>
-      <td style="border: none;">
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user=madhav9757&theme=tokyonight&hide_border=true" height="200" />
+      <td style="border: none; padding: 10px;">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=madhav9757&theme=tokyonight&hide_border=true" height="185" />
+      </td>
+    </tr>
+    <tr>
+      <td style="border: none; padding: 10px;">
+        <img src="static/top-langs.svg" height="185" />
+      </td>
+      <td style="border: none; padding: 10px;">
+        <img src="static/productive-time.svg" height="185" />
       </td>
     </tr>
   </table>
-  <br/>
-  <table style="border: none; border-collapse: collapse;">
-    <tr>
-      <td style="border: none; padding: 5px;">
-        <img src="static/top-langs.svg" height="200" />
-      </td>
-      <td style="border: none; padding: 5px;">
-        <img src="static/productive-time.svg" height="200" />
-      </td>
-    </tr>
-  </table>
+</div>
+
+<br/>
+
+<p align="center">
+  <img src="static/divider.gif" width="60%" height="2" />
+</p>
+
+<div align="center">
+  <samp><b>"Code is poetry, but systems are the stage."</b></samp><br/>
+  <sub><i>Crafted with precision & logic by Madhav</i></sub>
 </div>
 
 <br/>
