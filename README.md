@@ -33,4 +33,4 @@
 </div>
 
 <!-- Clears the right-aligned image so it doesn't break subsequent content -->
-<br clear="both">
+<br clear="both"> 
