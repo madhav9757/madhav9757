@@ -7,7 +7,7 @@
 <div align="center">
 
 <img
-src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=A7A459&center=true&vCenter=true&repeat=false&random=false&width=950&height=90&lines=Madhav+Semwal"
+src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=A7A459&center=true&vCenter=true&repeat=false&random=false&width=700&height=90&lines=Madhav+Semwal"
 />
 
 <div align="center">
