@@ -17,7 +17,7 @@ src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&d
 
 📖 **System architecture** • GenAI workflows • Security infrastructure  
 
-🎮 Competitive programming • APIs going brrr 🚀  
+🎮 Competitive programming • Chad zero-knowledge encryption 🗿  
 
 📍 Pune, India • Creator of AuthSphere & Syncra
 
