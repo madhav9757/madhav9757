@@ -2,7 +2,7 @@
 <tr>
 
 <!-- Left Section -->
-<td width="68%" valign="top">
+<td valign="top">
 
 <div align="center">
 
@@ -40,7 +40,7 @@ height="40"
 </td>
 
 <!-- Right Section -->
-<td width="32%" align="center" valign="top">
+<td align="center" valign="top">
 
 <img
 src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3FmcTgzcjNkeHJ5N3diNnB3YWZoMGw0NjF6cWRrd21lYzhqcGc1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/C9p5OvcSFWrte/giphy.gif"
