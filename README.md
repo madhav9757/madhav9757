@@ -12,13 +12,13 @@ src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&d
 <td>
 
 💼 **BE Comp @ SPPU** • Full-Stack Dev • Open-Source Engineer  
-<br>
+
 💻 **Go & Node.js** • React & Next.js • Neovim enthusiast  
-<br>
+
 📖 **System architecture** • GenAI workflows • Security infrastructure  
-<br>
+
 🎮 Competitive programming • APIs going brrr 🚀 • Chad zero-knowledge encryption 🗿  
-<br>
+
 📍 Pune, India • Creator of AuthSphere & Syncra
 
 </td>
