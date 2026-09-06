@@ -4,20 +4,20 @@
 <td width="65%" valign="top" align="center">
 
 <img
-src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=A7A459&center=true&vCenter=true&repeat=false&random=false&width=650&height=80&lines=Madhav+Semwal"
+src="assets/typing.svg"
 />
 
 <table>
 <tr>
 <td>
 
-💼 **BE Comp @ SPPU** • Full-Stack Dev • Open-Source Engineer  
+💼 **BE Comp @ SPPU** • Full-Stack Dev • Open-Source Engineer
 
-💻 **Go & Node.js** • React & Next.js • Neovim enthusiast  
+💻 **Go & Node.js** • React & Next.js • Neovim enthusiast
 
-📖 **System architecture** • GenAI workflows • Security infrastructure  
+📖 **System architecture** • GenAI workflows • Security infrastructure
 
-🎮 Competitive programming • Chad zero-knowledge encryption 🗿  
+🎮 Competitive programming • Chad zero-knowledge encryption 🗿
 
 📍 Pune, India • Creator of AuthSphere & Syncra
 
@@ -25,22 +25,29 @@ src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&d
 </tr>
 </table>
 
-<img src="https://raw.githubusercontent.com/innng/innng/master/assets/kyubey.gif" height="40"/>
+<img src="assets/kyubey.gif" height="40"/>
 
 <a href="https://www.linkedin.com/in/madhav-semwal-b40272377/">
-<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+<img src="assets/linkedin.svg" width="32" height="32" alt="LinkedIn"/>
 </a>
 
 <a href="https://leetcode.com/u/madhav9757/">
-<img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
+<img src="assets/leetcode.svg" width="32" height="32" alt="LeetCode"/>
 </a>
 
+<a href="https://github.com/madhav9757/madhav9757/blob/main/MADHAV_SEMWAL.pdf">
+<img src="assets/resume.svg" width="32" height="32" alt="resume"/>
+</a>
+
+<a href="https://madhav.madhavsemwal9.workers.dev/">
+<img src="assets/portfolio.svg" width="32" height="32" alt="portfolio"/>
+</a>
 </td>
 
 <td width="35%" align="center" valign="top">
 
 <img
-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3FmcTgzcjNkeHJ5N3diNnB3YWZoMGw0NjF6cWRrd21lYzhqcGc1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/C9p5OvcSFWrte/giphy.gif"
+src="assets/giphy.gif"
 width="280"
 />
 
