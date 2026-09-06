@@ -37,7 +37,7 @@ src="assets/typing.svg"
   <img src="assets/resume.svg" width="32" height="32" alt="Resume"/>
 </a>&nbsp;&nbsp;&nbsp;
 <a href="https://madhav.madhavsemwal9.workers.dev/">
-  <img src="assets/portfolio.svg" width="32" height="32" alt="Portfolio"/>
+  <img src="assets/portfolio.svg" width="42" height="42" alt="Portfolio"/>
 </a>
 </td>
 
