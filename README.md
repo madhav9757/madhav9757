@@ -28,19 +28,16 @@ src="assets/typing.svg"
 <img src="assets/kyubey.gif" height="40"/>
 
 <a href="https://www.linkedin.com/in/madhav-semwal-b40272377/">
-<img src="assets/linkedin.svg" width="32" height="32" alt="LinkedIn"/>
-</a>
-
+  <img src="assets/linkedin.svg" width="32" height="32" alt="LinkedIn"/>
+</a>&nbsp;&nbsp;&nbsp;
 <a href="https://leetcode.com/u/madhav9757/">
-<img src="assets/leetcode.svg" width="32" height="32" alt="LeetCode"/>
-</a>
-
+  <img src="assets/leetcode.svg" width="32" height="32" alt="LeetCode"/>
+</a>&nbsp;&nbsp;&nbsp;
 <a href="./assets/resume.pdf">
-<img src="assets/resume.svg" width="32" height="32" alt="resume"/>
-</a>
-
+  <img src="assets/resume.svg" width="32" height="32" alt="Resume"/>
+</a>&nbsp;&nbsp;&nbsp;
 <a href="https://madhav.madhavsemwal9.workers.dev/">
-<img src="assets/portfolio.svg" width="32" height="32" alt="portfolio"/>
+  <img src="assets/portfolio.svg" width="32" height="32" alt="Portfolio"/>
 </a>
 </td>
 
