@@ -35,7 +35,7 @@ src="assets/typing.svg"
 <img src="assets/leetcode.svg" width="32" height="32" alt="LeetCode"/>
 </a>
 
-<a href="https://github.com/madhav9757/madhav9757/blob/main/MADHAV_SEMWAL.pdf">
+<a href="./assets/resume.pdf">
 <img src="assets/resume.svg" width="32" height="32" alt="resume"/>
 </a>
 
