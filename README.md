@@ -1,47 +1,40 @@
-<table>
+<table width="100%">
 <tr>
 
-<td width="65%" valign="top" align="center">
+<td width="62%" valign="middle" align="center">
 
-<img
-src="assets/typing.svg"
-/>
+<img src="assets/typing.svg" width="100%"/>
 
 <table>
 <tr>
 <td>
 
-💼 **BE Comp @ SPPU** • Full-Stack Dev • Open-Source Engineer
+💼 &nbsp;**BE Comp @ SPPU** • Full-Stack Dev • Open-Source Engineer
 
-💻 **Go & Node.js** • React & Next.js • Neovim enthusiast
+💻 &nbsp;**Go & Node.js** • React & Next.js • Neovim enthusiast
 
-📖 **System architecture** • GenAI workflows • Security infrastructure
+📖 &nbsp;**System architecture** • GenAI workflows • Security infra
 
-🎮 Competitive programming • Chad zero-knowledge encryption 🗿
+🎮 &nbsp;Competitive programming • Chad zero-knowledge encryption 🗿
 
-📍 Pune, India • Creator of AuthSphere & Syncra
+📍 &nbsp;Pune, India • Creator of **AuthSphere** & **Syncra**
 
 </td>
 </tr>
 </table>
-
-<img src="assets/kyubey.gif" height="36"/>
-
-<br/>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/madhav-semwal-b40272377/)
 [![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/madhav9757/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF5733?style=for-the-badge&logo=firefox&logoColor=white)](https://madhav.madhavsemwal9.workers.dev/)
 [![Resume](https://img.shields.io/badge/Resume-4CAF50?style=for-the-badge&logo=googledocs&logoColor=white)](./assets/resume.pdf)
 
+<img src="assets/kyubey.gif" height="32"/>
+
 </td>
 
-<td width="35%" align="center" valign="top">
+<td width="38%" valign="middle" align="center">
 
-<img
-src="assets/giphy.gif"
-width="280"
-/>
+<img src="assets/giphy.gif" width="100%"/>
 
 </td>
 
