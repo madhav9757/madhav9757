@@ -9,10 +9,9 @@ src="assets/typing.svg"
 
 <table>
 <tr>
-<td>
+
 [![GitHub Readme Profile](https://gh-readme-profile.vercel.app/api?username=madhav9757&theme=ayu&hide=repos%2Cissues&show=issues_closed&revert=false&hide_border=false&hide_stroke=true&disabled_animations=false)](https://bit.ly/gh-readme-profile)
 
-</td>
 </tr>
 </table>
 
