@@ -25,20 +25,15 @@ src="assets/typing.svg"
 </tr>
 </table>
 
-<img src="assets/kyubey.gif" height="40"/>
+<img src="assets/kyubey.gif" height="36"/>
 
-<a href="https://www.linkedin.com/in/madhav-semwal-b40272377/">
-  <img src="assets/linkedin.svg" width="32" height="32" alt="LinkedIn"/>
-</a>&nbsp;&nbsp;&nbsp;
-<a href="https://leetcode.com/u/madhav9757/">
-  <img src="assets/leetcode.svg" width="32" height="32" alt="LeetCode"/>
-</a>&nbsp;&nbsp;&nbsp;
-<a href="./assets/resume.pdf">
-  <img src="assets/resume.svg" width="32" height="32" alt="Resume"/>
-</a>&nbsp;&nbsp;&nbsp;
-<a href="https://madhav.madhavsemwal9.workers.dev/">
-  <img src="assets/portfolio.svg" width="42" height="42" alt="Portfolio"/>
-</a>
+<br/>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/madhav-semwal-b40272377/)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/madhav9757/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5733?style=for-the-badge&logo=firefox&logoColor=white)](https://madhav.madhavsemwal9.workers.dev/)
+[![Resume](https://img.shields.io/badge/Resume-4CAF50?style=for-the-badge&logo=googledocs&logoColor=white)](./assets/resume.pdf)
+
 </td>
 
 <td width="35%" align="center" valign="top">
