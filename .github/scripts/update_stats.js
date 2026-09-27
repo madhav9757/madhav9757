@@ -3,6 +3,70 @@ const fs = require('fs');
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const USERNAME = 'madhav9757';
 
+async function fetchAllTimeContributions(username, token) {
+    const url = 'https://api.github.com/graphql';
+    
+    // 1. Get user creation date
+    const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            query: `query($login: String!) { user(login: $login) { createdAt } }`,
+            variables: { login: username }
+        })
+    });
+    const data = await res.json();
+    const createdAt = new Date(data.data.user.createdAt);
+    const startYear = createdAt.getFullYear();
+    const currentYear = new Date().getFullYear();
+    
+    // 2. Build one big query for all years
+    let queryParts = '';
+    for (let year = startYear; year <= currentYear; year++) {
+        const from = `${year}-01-01T00:00:00Z`;
+        const to = `${year}-12-31T23:59:59Z`;
+        queryParts += `
+        year${year}: contributionsCollection(from: "${from}", to: "${to}") {
+            totalCommitContributions
+            totalPullRequestReviewContributions
+        }
+        `;
+    }
+    
+    const fullQuery = `
+    query($login: String!) {
+        user(login: $login) {
+            ${queryParts}
+        }
+    }
+    `;
+    
+    const commitsRes = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            query: fullQuery,
+            variables: { login: username }
+        })
+    });
+    const commitsData = await commitsRes.json();
+    
+    let totalCommits = 0;
+    let totalReviews = 0;
+    const collections = commitsData.data.user;
+    for (let year = startYear; year <= currentYear; year++) {
+        totalCommits += collections[`year${year}`].totalCommitContributions;
+        totalReviews += collections[`year${year}`].totalPullRequestReviewContributions;
+    }
+    return { commits: totalCommits, reviews: totalReviews };
+}
+
 async function fetchStats() {
     const query = `
     query($login: String!) {
@@ -24,10 +88,6 @@ async function fetchStats() {
         }
         repositoriesContributedTo(first: 1) {
           totalCount
-        }
-        contributionsCollection {
-          totalCommitContributions
-          totalPullRequestReviewContributions
         }
       }
     }
@@ -59,18 +119,19 @@ async function fetchStats() {
         
         const stars = user.repositories.nodes.reduce((acc, repo) => acc + repo.stargazerCount, 0);
         const forks = user.repositories.nodes.reduce((acc, repo) => acc + repo.forkCount, 0);
-        const commits = user.contributionsCollection.totalCommitContributions;
-        const reviews = user.contributionsCollection.totalPullRequestReviewContributions;
+        
+        // Fetch all time commits and reviews
+        const allTime = await fetchAllTimeContributions(USERNAME, GITHUB_TOKEN);
         
         return {
             stars: stars.toString(),
             forks: forks.toString(),
-            commits: commits >= 1000 ? (commits / 1000).toFixed(1) + 'K' : commits.toString(),
+            commits: allTime.commits >= 1000 ? (allTime.commits / 1000).toFixed(1) + 'K' : allTime.commits.toString(),
             prs: user.pullRequests.totalCount.toString(),
             prs_merged: user.mergedPullRequests.totalCount.toString(),
             issues_closed: user.issues.totalCount.toString(),
             repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
-            reviews: reviews.toString()
+            reviews: allTime.reviews.toString()
         };
     } catch (e) {
         console.error(`Error fetching stats: ${e}`);
