@@ -3,37 +3,31 @@
 <td width="65%" valign="top" align="center">
 <img src="assets/typing.svg" width="100%" />
 <br/><br/>
-<table width="320">
+<table width="100%">
 <tr>
-<td colspan="2" align="center"><b>GitHub Activity</b></td>
+<td colspan="4" align="center"><b>GitHub Activity</b></td>
 </tr>
 <tr>
-<td width="70%" align="left">⭐ <b>Stars</b></td>
-<td width="30%" align="right"><code><b>116</b></code></td>
+<td width="35%" align="left"><img src="assets/star.svg" width="16" valign="middle"/> &nbsp;<b>Stars</b></td>
+<td width="15%" align="right"><code><b>116</b></code></td>
+<td width="35%" align="left"><img src="assets/fork.svg" width="16" valign="middle"/> &nbsp;<b>Forks</b></td>
+<td width="15%" align="right"><code><b>6</b></code></td>
 </tr>
 <tr>
-<td align="left">🍴 <b>Forks</b></td>
-<td align="right"><code><b>6</b></code></td>
-</tr>
-<tr>
-<td align="left">🚀 <b>Commits</b></td>
+<td align="left"><img src="assets/commit.svg" width="16" valign="middle"/> &nbsp;<b>Commits</b></td>
 <td align="right"><code><b>1.1K</b></code></td>
-</tr>
-<tr>
-<td align="left">🔀 <b>Pull Requests</b></td>
+<td align="left"><img src="assets/pr.svg" width="16" valign="middle"/> &nbsp;<b>Pull Requests</b></td>
 <td align="right"><code><b>84</b></code></td>
 </tr>
 <tr>
-<td align="left">✅ <b>PRs Merged</b></td>
+<td align="left"><img src="assets/merged.svg" width="16" valign="middle"/> &nbsp;<b>PRs Merged</b></td>
 <td align="right"><code><b>78</b></code></td>
-</tr>
-<tr>
-<td align="left">🔴 <b>Issues Closed</b></td>
+<td align="left"><img src="assets/issue.svg" width="16" valign="middle"/> &nbsp;<b>Issues Closed</b></td>
 <td align="right"><code><b>3</b></code></td>
 </tr>
 <tr>
-<td align="left">👥 <b>Repositories Contributed</b></td>
-<td align="right"><code><b>9</b></code></td>
+<td colspan="2" align="left"><img src="assets/users.svg" width="16" valign="middle"/> &nbsp;<b>Repositories Contributed</b></td>
+<td colspan="2" align="right"><code><b>9</b></code></td>
 </tr>
 </table>
 <br/>
