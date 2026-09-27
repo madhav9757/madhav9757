@@ -12,15 +12,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.x'
+          node-version: '18'
           
       - name: Run Script to Update Stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python .github/scripts/update_stats.py
+        run: node .github/scripts/update_stats.js
         
       - name: Commit and Push Changes
         run: |
