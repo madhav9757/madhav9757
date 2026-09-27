@@ -9,7 +9,38 @@ src="assets/typing.svg"
 
 <table>
 <tr>
-
+<td align="center">
+  <table width="320">
+    <tr>
+      <td align="left" width="60%">⭐ <b>Star's Count:</b></td>
+      <td align="right" width="40%"><code><b>116</b></code></td>
+    </tr>
+    <tr>
+      <td align="left">🍴 <b>Fork's Count:</b></td>
+      <td align="right"><code><b>6</b></code></td>
+    </tr>
+    <tr>
+      <td align="left">🚀 <b>Commit's Count:</b></td>
+      <td align="right"><code><b>1.1K</b></code></td>
+    </tr>
+    <tr>
+      <td align="left">🔀 <b>Total PRs:</b></td>
+      <td align="right"><code><b>84</b></code></td>
+    </tr>
+    <tr>
+      <td align="left">✅ <b>Total PRs Merged:</b></td>
+      <td align="right"><code><b>78</b></code></td>
+    </tr>
+    <tr>
+      <td align="left">🔴 <b>Total Issues Closed:</b></td>
+      <td align="right"><code><b>3</b></code></td>
+    </tr>
+    <tr>
+      <td align="left">👥 <b>Contributed to:</b></td>
+      <td align="right"><code><b>9</b></code></td>
+    </tr>
+  </table>
+</td>
 </tr>
 </table>
 
