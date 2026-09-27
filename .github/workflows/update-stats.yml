@@ -3,12 +3,12 @@ name: Update GitHub Stats SVG
 on:
   schedule:
     # Runs every 6 hours to keep stats highly accurate
-    - cron: "0 */6 * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch: # Allows manual trigger from the Actions tab
   push:
     paths:
-      - '.github/scripts/update_stats.js'
-      - '.github/workflows/update-stats.yml'
+      - ".github/scripts/update_stats.js"
+      - ".github/workflows/update-stats.yml"
 
 # Ensure only one instance runs at a time to prevent race conditions on push
 concurrency:
@@ -22,18 +22,18 @@ jobs:
   update-svg:
     runs-on: ubuntu-latest
     timeout-minutes: 5 # Fail fast if something hangs
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-        
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use latest LTS
-          
+          node-version: "20" # Use latest LTS
+
       - name: Run Stats Aggregator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,7 +41,7 @@ jobs:
           echo "Starting GitHub GraphQL data aggregation..."
           node .github/scripts/update_stats.js
           echo "Done fetching and updating assets/stats-card.svg!"
-          
+
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
