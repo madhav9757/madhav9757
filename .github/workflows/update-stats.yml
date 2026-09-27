@@ -2,30 +2,53 @@ name: Update GitHub Stats SVG
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs every day at midnight
+    # Runs every 6 hours to keep stats highly accurate
+    - cron: "0 */6 * * *"
   workflow_dispatch: # Allows manual trigger from the Actions tab
+  push:
+    paths:
+      - '.github/scripts/update_stats.js'
+      - '.github/workflows/update-stats.yml'
+
+# Ensure only one instance runs at a time to prevent race conditions on push
+concurrency:
+  group: "update-stats"
+  cancel-in-progress: true
+
+permissions:
+  contents: write # Explicitly required to push changes
 
 jobs:
   update-svg:
     runs-on: ubuntu-latest
+    timeout-minutes: 5 # Fail fast if something hangs
+    
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
         
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20' # Use latest LTS
           
-      - name: Run Script to Update Stats
+      - name: Run Stats Aggregator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node .github/scripts/update_stats.js
-        
-      - name: Commit and Push Changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add assets/stats-card.svg
-          git commit -m "Automated update: GitHub Stats SVG" || echo "No changes to commit"
-          git push
+          echo "Starting GitHub GraphQL data aggregation..."
+          node .github/scripts/update_stats.js
+          echo "Done fetching and updating assets/stats-card.svg!"
+          
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated update: GitHub Stats SVG"
+          file_pattern: "assets/stats-card.svg"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+          skip_dirty_check: false
+          skip_fetch: true
