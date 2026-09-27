@@ -1,37 +1,21 @@
-<table>
+<table width="100%">
 <tr>
-
 <td width="65%" valign="top" align="center">
-
-<img
-src="assets/typing.svg"
-/>
-
-<table>
-<tr>
-
-[![GitHub Readme Profile](https://gh-readme-profile.vercel.app/api?username=madhav9757&theme=ayu&hide=repos%2Cissues&show=issues_closed&revert=false&hide_border=false&hide_stroke=true&disabled_animations=false)](https://bit.ly/gh-readme-profile)
-
+<img src="assets/typing.svg" width="100%" />
+<br/><br/>
+<img src="assets/stats-card.svg" width="100%" alt="GitHub Activity Stats" />
+</td>
+<td width="35%" valign="top" align="center">
+<img src="assets/giphy.gif" width="280" />
+</td>
 </tr>
-</table>
-
-<img src="assets/kyubey.gif" height="36"/>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/madhav-semwal-b40272377/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/madhav9757/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5733?style=for-the-badge&logo=firefox&logoColor=white)](https://madhav.madhavsemwal9.workers.dev/)
-[![Resume](https://img.shields.io/badge/Resume-4CAF50?style=for-the-badge&logo=googledocs&logoColor=white)](./assets/resume.pdf)
-
+<tr>
+<td colspan="2" align="center">
+<img src="assets/kyubey.gif" height="28" align="absmiddle" />&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/madhav-semwal-b40272377/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" align="absmiddle" /></a>&nbsp;
+<a href="https://leetcode.com/u/madhav9757/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" align="absmiddle" /></a>&nbsp;
+<a href="https://madhav.madhavsemwal9.workers.dev/"><img src="https://img.shields.io/badge/Portfolio-FF5733?style=for-the-badge&logo=firefox&logoColor=white" alt="Portfolio" align="absmiddle" /></a>&nbsp;
+<a href="./assets/resume.pdf"><img src="https://img.shields.io/badge/Resume-4CAF50?style=for-the-badge&logo=googledocs&logoColor=white" alt="Resume" align="absmiddle" /></a>
 </td>
-
-<td width="35%" align="center" valign="top">
-
-<img
-src="assets/giphy.gif"
-width="280"
-/>
-
-</td>
-
 </tr>
 </table>
