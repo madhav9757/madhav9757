@@ -1,10 +1,10 @@
-const fs = require('fs');
+import { writeFileSync } from "fs";
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const USERNAME = 'madhav9757';
+const USERNAME = "madhav9757";
 
 async function fetchStats() {
-    const query = `
+  const query = `
     query($login: String!) {
       user(login: $login) {
         repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
@@ -32,51 +32,60 @@ async function fetchStats() {
     }
     `;
 
-    const url = 'https://api.github.com/graphql';
-    
-    try {
-        const res = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${GITHUB_TOKEN}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ query, variables: { login: USERNAME } })
-        });
-        
-        if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        
-        const resData = await res.json();
-        if (resData.errors) {
-             console.error("GraphQL errors:", resData.errors);
-             return null;
-        }
+  const url = "https://api.github.com/graphql";
 
-        const user = resData.data.user;
-        
-        const stars = user.repositories.nodes.reduce((acc, repo) => acc + repo.stargazerCount, 0);
-        const forks = user.repositories.nodes.reduce((acc, repo) => acc + repo.forkCount, 0);
-        const commits = user.contributionsCollection.totalCommitContributions;
-        
-        return {
-            stars: stars.toString(),
-            forks: forks.toString(),
-            commits: commits >= 1000 ? (commits / 1000).toFixed(1) + 'K' : commits.toString(),
-            prs: user.pullRequests.totalCount.toString(),
-            prs_merged: user.mergedPullRequests.totalCount.toString(),
-            issues_closed: user.issues.totalCount.toString(),
-            repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
-        };
-    } catch (e) {
-        console.error(`Error fetching stats: ${e}`);
-        return null;
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query, variables: { login: USERNAME } }),
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
+
+    const resData = await res.json();
+    if (resData.errors) {
+      console.error("GraphQL errors:", resData.errors);
+      return null;
+    }
+
+    const user = resData.data.user;
+
+    const stars = user.repositories.nodes.reduce(
+      (acc, repo) => acc + repo.stargazerCount,
+      0,
+    );
+    const forks = user.repositories.nodes.reduce(
+      (acc, repo) => acc + repo.forkCount,
+      0,
+    );
+    const commits = user.contributionsCollection.totalCommitContributions;
+
+    return {
+      stars: stars.toString(),
+      forks: forks.toString(),
+      commits:
+        commits >= 1000
+          ? (commits / 1000).toFixed(1) + "K"
+          : commits.toString(),
+      prs: user.pullRequests.totalCount.toString(),
+      prs_merged: user.mergedPullRequests.totalCount.toString(),
+      issues_closed: user.issues.totalCount.toString(),
+      repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
+    };
+  } catch (e) {
+    console.error(`Error fetching stats: ${e}`);
+    return null;
+  }
 }
 
 function updateSvg(stats) {
-    const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
+  const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
   <defs>
     <style>
       .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 10px; }
@@ -147,23 +156,23 @@ function updateSvg(stats) {
 
 </svg>`;
 
-    fs.writeFileSync('assets/stats-card.svg', svgContent, 'utf-8');
+  writeFileSync("assets/stats-card.svg", svgContent, "utf-8");
 }
 
 async function main() {
-    if (!GITHUB_TOKEN) {
-        console.error("GITHUB_TOKEN not found!");
-        process.exit(1);
-    }
-    
-    const stats = await fetchStats();
-    if (stats) {
-        updateSvg(stats);
-        console.log("Successfully updated stats-card.svg");
-    } else {
-        console.error("Failed to fetch stats");
-        process.exit(1);
-    }
+  if (!GITHUB_TOKEN) {
+    console.error("GITHUB_TOKEN not found!");
+    process.exit(1);
+  }
+
+  const stats = await fetchStats();
+  if (stats) {
+    updateSvg(stats);
+    console.log("Successfully updated stats-card.svg");
+  } else {
+    console.error("Failed to fetch stats");
+    process.exit(1);
+  }
 }
 
 main();
