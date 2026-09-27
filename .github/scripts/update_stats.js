@@ -3,7 +3,7 @@ const fs = require('fs');
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const USERNAME = 'madhav9757';
 
-async function fetchAllTimeCommits(username, token) {
+async function fetchAllTimeContributions(username, token) {
     const url = 'https://api.github.com/graphql';
     
     // 1. Get user creation date
@@ -31,6 +31,7 @@ async function fetchAllTimeCommits(username, token) {
         queryParts += `
         year${year}: contributionsCollection(from: "${from}", to: "${to}") {
             totalCommitContributions
+            totalPullRequestReviewContributions
         }
         `;
     }
@@ -57,11 +58,13 @@ async function fetchAllTimeCommits(username, token) {
     const commitsData = await commitsRes.json();
     
     let totalCommits = 0;
+    let totalReviews = 0;
     const collections = commitsData.data.user;
     for (let year = startYear; year <= currentYear; year++) {
         totalCommits += collections[`year${year}`].totalCommitContributions;
+        totalReviews += collections[`year${year}`].totalPullRequestReviewContributions;
     }
-    return totalCommits;
+    return { commits: totalCommits, reviews: totalReviews };
 }
 
 async function fetchStats() {
@@ -85,9 +88,6 @@ async function fetchStats() {
         }
         repositoriesContributedTo(first: 1) {
           totalCount
-        }
-        contributionsCollection {
-          totalPullRequestReviewContributions
         }
       }
     }
@@ -119,20 +119,19 @@ async function fetchStats() {
         
         const stars = user.repositories.nodes.reduce((acc, repo) => acc + repo.stargazerCount, 0);
         const forks = user.repositories.nodes.reduce((acc, repo) => acc + repo.forkCount, 0);
-        const reviews = user.contributionsCollection.totalPullRequestReviewContributions;
         
-        // Fetch all time commits
-        const allTimeCommits = await fetchAllTimeCommits(USERNAME, GITHUB_TOKEN);
+        // Fetch all time commits and reviews
+        const allTime = await fetchAllTimeContributions(USERNAME, GITHUB_TOKEN);
         
         return {
             stars: stars.toString(),
             forks: forks.toString(),
-            commits: allTimeCommits >= 1000 ? (allTimeCommits / 1000).toFixed(1) + 'K' : allTimeCommits.toString(),
+            commits: allTime.commits >= 1000 ? (allTime.commits / 1000).toFixed(1) + 'K' : allTime.commits.toString(),
             prs: user.pullRequests.totalCount.toString(),
             prs_merged: user.mergedPullRequests.totalCount.toString(),
             issues_closed: user.issues.totalCount.toString(),
             repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
-            reviews: reviews.toString()
+            reviews: allTime.reviews.toString()
         };
     } catch (e) {
         console.error(`Error fetching stats: ${e}`);
