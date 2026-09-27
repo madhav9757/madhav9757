@@ -62,7 +62,7 @@
   <!-- Issues -->
   <g transform="translate(250, 152)">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="#a371f7"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path></svg>
-    <text x="24" y="13" class="text font-weight="600">Issues Closed</text>
+    <text x="24" y="13" class="text" font-weight="600">Issues Closed</text>
   </g>
   <rect class="val-bg" x="390" y="146" width="60" height="26" />
   <text x="440" y="163" class="val-text">3</text>
