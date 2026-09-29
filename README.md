@@ -1,7 +1,7 @@
 <table width="100%">
 <tr>
 <td width="65%" valign="top" align="center"
-    background="https://raw.githubusercontent.com/madhav9757/madhav9757/new/main/assets/MDddTpKFicmPPRJ819.webp"
+     background="https://raw.githubusercontent.com/madhav9757/madhav9757/refs/heads/new/main/assets/MDddTpKFicmPPRJ819.webp"
     style="background-size: cover; background-position: center;">
 <img src="assets/typing.svg" width="100%" />
 <br/><br/>
