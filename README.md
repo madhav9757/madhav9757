@@ -1,9 +1,9 @@
 <table width="100%">
 <tr>
-<td width="65%" valign="top" align="center">
-<img src="assets/typing.svg" width="100%" />
+<td width="65%" valign="top" align="center" background="assets/MDddTpKFicmPPRJ819.webp" style="background-size: cover; background-position: center;">
+<img src="assets/typing.svg" width="100%" style="opacity: 0.80" />
 <br/><br/>
-<img src="assets/stats-card.svg" width="100%" alt="GitHub Activity Stats" />
+<img src="assets/stats-card.svg" width="100%" alt="GitHub Activity Stats" style="opacity: 0.85;" />
 </td>
 <td width="35%" valign="top" align="center">
 <img src="assets/giphy.gif" width="280" />
