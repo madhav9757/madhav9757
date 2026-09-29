@@ -1,11 +1,7 @@
 <table width="100%">
 <tr>
-<td width="65%" valign="top" align="center"
-     background="https://raw.githubusercontent.com/madhav9757/madhav9757/refs/heads/new/main/assets/MDddTpKFicmPPRJ819.webp"
-    style="background-size: cover; background-position: center;">
-<img src="assets/typing.svg" width="100%" />
-<br/><br/>
-<img src="assets/stats-card.svg" width="100%" alt="GitHub Activity Stats" />
+<td width="65%" valign="top" align="center">
+  <img src="assets/profile-hero.svg" width="100%" alt="Madhav Semwal profile hero" />
 </td>
 <td width="35%" valign="top" align="center">
 <img src="assets/giphy.gif" width="280" />
