@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 650 80" width="650" height="80">
   <defs>
     <style>
-      .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 10px; }
+      .bg { fill: rgba(13, 17, 23, 0.55); stroke: #30363d; stroke-width: 1px; rx: 10px; }
       .text {
         font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
         font-size: 36px;
