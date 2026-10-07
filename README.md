@@ -6,7 +6,7 @@
 <img src="assets/stats-card.svg" width="100%" alt="GitHub Activity Stats" />
 </td>
 <td width="35%" valign="top" align="center">
-<img src="assets/giphy.gif" width="280" />
+<img src="assets/giphy.webp" width="280" />
 </td>
 </tr>
 <tr>
@@ -21,7 +21,7 @@
   <a href="https://madhav.madhavsemwal9.workers.dev/">
     <img src="https://img.shields.io/badge/Portfolio-24292E?style=flat-square&logo=firefox&logoColor=white" alt="Portfolio" align="absmiddle" />
   </a>&nbsp;
-  <a href="./assets/resume.pdf">
+  <a href="https://github.com/madhav9757/madhav9757/blob/main/assets/resume.pdf">
     <img src="https://img.shields.io/badge/Resume-24292E?style=flat-square&logo=googledocs&logoColor=white" alt="Resume" align="absmiddle" />
   </a>
 </td>
