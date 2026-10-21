@@ -17,6 +17,8 @@ concurrency:
 
 permissions:
   contents: write # Explicitly required to push changes
+  issues: read
+  pull-requests: read
 
 jobs:
   update-svg:
@@ -37,6 +39,8 @@ jobs:
       - name: Run Stats Aggregator
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.PAT || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          PAT: ${{ secrets.PAT }}
         run: |
           echo "Starting GitHub GraphQL data aggregation..."
           node .github/scripts/update_stats.js

@@ -39,7 +39,8 @@ function loadEnv() {
 }
 loadEnv();
 
-const GITHUB_TOKEN = process.env.GH_TOKEN || process.env.PAT || process.env.GITHUB_TOKEN;
+let GITHUB_TOKEN = process.env.GH_TOKEN || process.env.PAT || process.env.GITHUB_TOKEN;
+if (GITHUB_TOKEN) GITHUB_TOKEN = GITHUB_TOKEN.trim();
 const USERNAME = process.env.GH_USERNAME || process.env.GITHUB_USERNAME || 'madhav9757';
 
 async function fetchAllTimeContributions(username, token) {
@@ -58,6 +59,10 @@ async function fetchAllTimeContributions(username, token) {
             variables: { login: username }
         })
     });
+    if (!res.ok) {
+        const body = await res.text();
+        throw new Error(`HTTP error! status: ${res.status} (${res.statusText}) - ${body}`);
+    }
     const data = await res.json();
     if (!data.data || !data.data.user) {
         throw new Error('Failed to fetch user creation date: ' + JSON.stringify(data.errors || data));
@@ -181,7 +186,8 @@ async function fetchStats() {
         });
 
         if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
+            const body = await res.text();
+            throw new Error(`HTTP error! status: ${res.status} (${res.statusText}) - ${body}`);
         }
 
         const resData = await res.json();
