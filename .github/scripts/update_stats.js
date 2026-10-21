@@ -119,6 +119,28 @@ async function fetchAllTimeContributions(username, token) {
     return { commits: totalCommits, reviews: totalReviews };
 }
 
+async function fetchSearchCount(query, token) {
+    try {
+        const url = `https://api.github.com/search/issues?q=${encodeURIComponent(query)}`;
+        const headers = {
+            'Accept': 'application/vnd.github+json',
+            'User-Agent': 'GitHub-Stats-Script'
+        };
+        if (token) headers['Authorization'] = `Bearer ${token}`;
+
+        const res = await fetch(url, { headers });
+        if (res.ok) {
+            const data = await res.json();
+            if (typeof data.total_count === 'number') {
+                return data.total_count;
+            }
+        }
+    } catch (e) {
+        console.warn(`Failed to fetch count for query "${query}":`, e.message);
+    }
+    return 0;
+}
+
 async function fetchStats() {
     const query = `
     query($login: String!) {
@@ -176,12 +198,21 @@ async function fetchStats() {
         // Fetch all time commits (public + private) and reviews
         const allTime = await fetchAllTimeContributions(USERNAME, GITHUB_TOKEN);
 
+        // Fetch all-time total PRs and merged PRs across all accessible repos (GraphQL + Search API)
+        const [searchPrs, searchMergedPrs] = await Promise.all([
+            fetchSearchCount(`author:${USERNAME} type:pr`, GITHUB_TOKEN),
+            fetchSearchCount(`author:${USERNAME} type:pr is:merged`, GITHUB_TOKEN)
+        ]);
+
+        const totalPrs = Math.max(user.pullRequests?.totalCount || 0, searchPrs || 0);
+        const totalMergedPrs = Math.max(user.mergedPullRequests?.totalCount || 0, searchMergedPrs || 0);
+
         return {
             stars: stars.toString(),
             forks: forks.toString(),
             commits: allTime.commits >= 1000 ? (allTime.commits / 1000).toFixed(1) + 'K' : allTime.commits.toString(),
-            prs: user.pullRequests.totalCount.toString(),
-            prs_merged: user.mergedPullRequests.totalCount.toString(),
+            prs: totalPrs.toString(),
+            prs_merged: totalMergedPrs.toString(),
             issues_closed: user.issues.totalCount.toString(),
             repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
             reviews: allTime.reviews.toString()
