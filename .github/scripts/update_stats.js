@@ -1,17 +1,57 @@
 const fs = require('fs');
+const path = require('path');
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const USERNAME = 'madhav9757';
+// Auto-load .env file from root or parent directories if present
+function loadEnv() {
+    if (typeof process.loadEnvFile === 'function') {
+        try {
+            process.loadEnvFile();
+            return;
+        } catch (_) {}
+    }
+    const candidatePaths = [
+        path.resolve(process.cwd(), '.env'),
+        path.resolve(__dirname, '../../.env'),
+        path.resolve(__dirname, '../.env'),
+        path.resolve(__dirname, '.env')
+    ];
+    for (const envPath of candidatePaths) {
+        if (fs.existsSync(envPath)) {
+            const lines = fs.readFileSync(envPath, 'utf-8').split(/\r?\n/);
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (!trimmed || trimmed.startsWith('#')) continue;
+                const eqIdx = trimmed.indexOf('=');
+                if (eqIdx !== -1) {
+                    const key = trimmed.slice(0, eqIdx).trim();
+                    let val = trimmed.slice(eqIdx + 1).trim();
+                    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+                        val = val.slice(1, -1);
+                    }
+                    if (!process.env[key]) {
+                        process.env[key] = val;
+                    }
+                }
+            }
+            break;
+        }
+    }
+}
+loadEnv();
+
+const GITHUB_TOKEN = process.env.GH_TOKEN || process.env.PAT || process.env.GITHUB_TOKEN;
+const USERNAME = process.env.GH_USERNAME || process.env.GITHUB_USERNAME || 'madhav9757';
 
 async function fetchAllTimeContributions(username, token) {
     const url = 'https://api.github.com/graphql';
-    
+
     // 1. Get user creation date
     const res = await fetch(url, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'User-Agent': 'GitHub-Stats-Script'
         },
         body: JSON.stringify({
             query: `query($login: String!) { user(login: $login) { createdAt } }`,
@@ -19,11 +59,14 @@ async function fetchAllTimeContributions(username, token) {
         })
     });
     const data = await res.json();
+    if (!data.data || !data.data.user) {
+        throw new Error('Failed to fetch user creation date: ' + JSON.stringify(data.errors || data));
+    }
     const createdAt = new Date(data.data.user.createdAt);
     const startYear = createdAt.getFullYear();
     const currentYear = new Date().getFullYear();
-    
-    // 2. Build one big query for all years
+
+    // 2. Build query for all years to calculate public + private (restricted) contributions
     let queryParts = '';
     for (let year = startYear; year <= currentYear; year++) {
         const from = `${year}-01-01T00:00:00Z`;
@@ -32,10 +75,11 @@ async function fetchAllTimeContributions(username, token) {
         year${year}: contributionsCollection(from: "${from}", to: "${to}") {
             totalCommitContributions
             totalPullRequestReviewContributions
+            restrictedContributionsCount
         }
         `;
     }
-    
+
     const fullQuery = `
     query($login: String!) {
         user(login: $login) {
@@ -43,12 +87,13 @@ async function fetchAllTimeContributions(username, token) {
         }
     }
     `;
-    
+
     const commitsRes = await fetch(url, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'User-Agent': 'GitHub-Stats-Script'
         },
         body: JSON.stringify({
             query: fullQuery,
@@ -56,13 +101,20 @@ async function fetchAllTimeContributions(username, token) {
         })
     });
     const commitsData = await commitsRes.json();
-    
+    if (!commitsData.data || !commitsData.data.user) {
+        throw new Error('Failed to fetch yearly contributions: ' + JSON.stringify(commitsData.errors || commitsData));
+    }
+
     let totalCommits = 0;
     let totalReviews = 0;
     const collections = commitsData.data.user;
     for (let year = startYear; year <= currentYear; year++) {
-        totalCommits += collections[`year${year}`].totalCommitContributions;
-        totalReviews += collections[`year${year}`].totalPullRequestReviewContributions;
+        const yearData = collections[`year${year}`];
+        if (yearData) {
+            // Include both public commits and private (restricted) contributions
+            totalCommits += (yearData.totalCommitContributions || 0) + (yearData.restrictedContributionsCount || 0);
+            totalReviews += (yearData.totalPullRequestReviewContributions || 0);
+        }
     }
     return { commits: totalCommits, reviews: totalReviews };
 }
@@ -94,35 +146,36 @@ async function fetchStats() {
     `;
 
     const url = 'https://api.github.com/graphql';
-    
+
     try {
         const res = await fetch(url, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${GITHUB_TOKEN}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'User-Agent': 'GitHub-Stats-Script'
             },
             body: JSON.stringify({ query, variables: { login: USERNAME } })
         });
-        
+
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
-        
+
         const resData = await res.json();
         if (resData.errors) {
-             console.error("GraphQL errors:", resData.errors);
-             return null;
+            console.error("GraphQL errors:", resData.errors);
+            return null;
         }
 
         const user = resData.data.user;
-        
+
         const stars = user.repositories.nodes.reduce((acc, repo) => acc + repo.stargazerCount, 0);
         const forks = user.repositories.nodes.reduce((acc, repo) => acc + repo.forkCount, 0);
-        
-        // Fetch all time commits and reviews
+
+        // Fetch all time commits (public + private) and reviews
         const allTime = await fetchAllTimeContributions(USERNAME, GITHUB_TOKEN);
-        
+
         return {
             stars: stars.toString(),
             forks: forks.toString(),
@@ -134,7 +187,7 @@ async function fetchStats() {
             reviews: allTime.reviews.toString()
         };
     } catch (e) {
-        console.error(`Error fetching stats: ${e}`);
+        console.error(`Error fetching stats: ${e.message || e}`);
         return null;
     }
 }
@@ -238,19 +291,29 @@ function updateSvg(stats) {
 
 </svg>`;
 
-    fs.writeFileSync('assets/stats-card.svg', svgContent, 'utf-8');
+    const targetPath = fs.existsSync(path.resolve(process.cwd(), 'assets')) 
+        ? path.resolve(process.cwd(), 'assets/stats-card.svg')
+        : path.resolve(__dirname, '../../assets/stats-card.svg');
+
+    const assetsDir = path.dirname(targetPath);
+    if (!fs.existsSync(assetsDir)) {
+        fs.mkdirSync(assetsDir, { recursive: true });
+    }
+
+    fs.writeFileSync(targetPath, svgContent, 'utf-8');
 }
 
 async function main() {
     if (!GITHUB_TOKEN) {
-        console.error("GITHUB_TOKEN not found!");
+        console.error("GITHUB_TOKEN not found! Please set GITHUB_TOKEN in your .env file or environment variables.");
         process.exit(1);
     }
-    
+
+    console.log(`Fetching stats for ${USERNAME}...`);
     const stats = await fetchStats();
     if (stats) {
         updateSvg(stats);
-        console.log("Successfully updated stats-card.svg");
+        console.log("Successfully updated assets/stats-card.svg with stats:", stats);
     } else {
         console.error("Failed to fetch stats");
         process.exit(1);

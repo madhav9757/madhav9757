@@ -36,7 +36,7 @@ jobs:
 
       - name: Run Stats Aggregator
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.PAT || secrets.GITHUB_TOKEN }}
         run: |
           echo "Starting GitHub GraphQL data aggregation..."
           node .github/scripts/update_stats.js
