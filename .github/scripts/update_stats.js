@@ -123,7 +123,7 @@ async function fetchStats() {
     const query = `
     query($login: String!) {
       user(login: $login) {
-        repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+        repositories(first: 100, ownerAffiliations: OWNER) {
           nodes {
             stargazerCount
             forkCount
