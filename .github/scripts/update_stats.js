@@ -162,7 +162,7 @@ async function fetchStats() {
         mergedPullRequests: pullRequests(first: 1, states: MERGED) {
           totalCount
         }
-        issues(first: 1, states: CLOSED) {
+        issues(first: 1) {
           totalCount
         }
         repositoriesContributedTo(first: 1) {
@@ -204,14 +204,16 @@ async function fetchStats() {
         // Fetch all time commits (public + private) and reviews
         const allTime = await fetchAllTimeContributions(USERNAME, GITHUB_TOKEN);
 
-        // Fetch all-time total PRs and merged PRs across all accessible repos (GraphQL + Search API)
-        const [searchPrs, searchMergedPrs] = await Promise.all([
+        // Fetch all-time total PRs, merged PRs, and issues across all accessible repos (GraphQL + Search API)
+        const [searchPrs, searchMergedPrs, searchIssues] = await Promise.all([
             fetchSearchCount(`author:${USERNAME} type:pr`, GITHUB_TOKEN),
-            fetchSearchCount(`author:${USERNAME} type:pr is:merged`, GITHUB_TOKEN)
+            fetchSearchCount(`author:${USERNAME} type:pr is:merged`, GITHUB_TOKEN),
+            fetchSearchCount(`author:${USERNAME} type:issue`, GITHUB_TOKEN)
         ]);
 
         const totalPrs = Math.max(user.pullRequests?.totalCount || 0, searchPrs || 0);
         const totalMergedPrs = Math.max(user.mergedPullRequests?.totalCount || 0, searchMergedPrs || 0);
+        const totalIssues = Math.max(user.issues?.totalCount || 0, searchIssues || 0);
 
         return {
             stars: stars.toString(),
@@ -219,7 +221,8 @@ async function fetchStats() {
             commits: allTime.commits >= 1000 ? (allTime.commits / 1000).toFixed(1) + 'K' : allTime.commits.toString(),
             prs: totalPrs.toString(),
             prs_merged: totalMergedPrs.toString(),
-            issues_closed: user.issues.totalCount.toString(),
+            issues: totalIssues.toString(),
+            issues_closed: totalIssues.toString(),
             repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
             reviews: allTime.reviews.toString()
         };
@@ -301,8 +304,8 @@ function updateSvg(stats) {
     <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#a371f7">
       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
     </svg>
-    <text class="label" x="38" y="25">Issues Closed</text>
-    <text class="value" x="198" y="25">${stats.issues_closed}</text>
+    <text class="label" x="38" y="25">Issues</text>
+    <text class="value" x="198" y="25">${stats.issues || stats.issues_closed}</text>
   </g>
 
   <!-- Row 4 -->
