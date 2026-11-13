@@ -234,133 +234,104 @@ async function fetchStats() {
 
 function renderSvgContent(stats, theme = 'dark') {
     const isDark = theme === 'dark';
+
     const c = isDark ? {
-        bg: '#0d1117',
-        border: '#30363d',
-        card: '#161b22',
-        cardBorder: '#21262d',
-        label: '#8b949e',
-        value: '#c9d1d9',
-        forks: '#8b949e',
-        commits: '#8b949e',
-        prs: '#3fb950',
-        merged: '#a371f7',
-        issues: '#a371f7',
-        repos: '#8b949e',
-        reviews: '#2ea043',
-        star: '#e3b341'
+        bg: '#0D1117',
+        border: '#30363D',
+        shadow: '#000000',
+        cardBg: '#161B22',
+        cardBorder: '#30363D',
+        cardShadow: '#000000',
+        label: '#8B949E',
+        value: '#FFFFFF',
+        metrics: {
+            stars:   { bg: '#2D2305', border: '#FFE600', icon: '#FFE600' },
+            forks:   { bg: '#1E2530', border: '#8B949E', icon: '#E2E8F0' },
+            commits: { bg: '#0C2B42', border: '#38BDF8', icon: '#38BDF8' },
+            prs:     { bg: '#0B331A', border: '#4ADE80', icon: '#4ADE80' },
+            merged:  { bg: '#291542', border: '#C084FC', icon: '#C084FC' },
+            issues:  { bg: '#380E23', border: '#F472B6', icon: '#F472B6' },
+            repos:   { bg: '#092D33', border: '#2DD4BF', icon: '#2DD4BF' },
+            reviews: { bg: '#0A3022', border: '#34D399', icon: '#34D399' }
+        }
     } : {
-        bg: '#ffffff',
-        border: '#d0d7de',
-        card: '#f6f8fa',
-        cardBorder: '#d0d7de',
-        label: '#57606a',
-        value: '#1f2328',
-        forks: '#57606a',
-        commits: '#57606a',
-        prs: '#1a7f37',
-        merged: '#8250df',
-        issues: '#8250df',
-        repos: '#57606a',
-        reviews: '#1a7f37',
-        star: '#d4a72c'
+        bg: '#FFFFFF',
+        border: '#000000',
+        shadow: '#000000',
+        cardBg: '#FFFFFF',
+        cardBorder: '#000000',
+        cardShadow: '#000000',
+        label: '#000000',
+        value: '#000000',
+        metrics: {
+            stars:   { bg: '#FFE600', border: '#000000', icon: '#000000' },
+            forks:   { bg: '#E2E8F0', border: '#000000', icon: '#000000' },
+            commits: { bg: '#7DD3FC', border: '#000000', icon: '#000000' },
+            prs:     { bg: '#86EFAC', border: '#000000', icon: '#000000' },
+            merged:  { bg: '#D8B4FE', border: '#000000', icon: '#000000' },
+            issues:  { bg: '#F472B6', border: '#000000', icon: '#000000' },
+            repos:   { bg: '#67E8F9', border: '#000000', icon: '#000000' },
+            reviews: { bg: '#6EE7B7', border: '#000000', icon: '#000000' }
+        }
     };
+
+    function card(x, y, m, iconPath, label, val) {
+        return `
+    <g transform="translate(${x}, ${y})">
+      <!-- Brutalist Hard Shadow -->
+      <rect x="3" y="3" width="207" height="35" fill="${c.cardShadow}" />
+      <!-- Main Card -->
+      <rect x="0" y="0" width="207" height="35" fill="${c.cardBg}" stroke="${c.cardBorder}" stroke-width="1.5" />
+      <!-- Sharp Icon Box -->
+      <rect x="0" y="0" width="35" height="35" fill="${m.bg}" stroke="${isDark ? m.border : c.cardBorder}" stroke-width="1.5" />
+      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="${m.icon}">
+        ${iconPath}
+      </svg>
+      <!-- Label -->
+      <text class="label" x="45" y="18" dominant-baseline="central">${label}</text>
+      <!-- Value -->
+      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">${val}</text>
+    </g>`;
+    }
+
+    const starIcon = '<path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>';
+    const forkIcon = '<path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>';
+    const commitIcon = '<path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>';
+    const prIcon = '<path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm2.25-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 8.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.82-1.7l1.45-1.45a.75.75 0 0 1 1.06 1.06l-2.75 2.75a.75.75 0 0 1-1.06 0l-2.75-2.75a.75.75 0 0 1 1.06-1.06l1.45 1.45V5.372a2.25 2.25 0 1 1 1.5 0v3.678Z"/>';
+    const mergedIcon = '<path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>';
+    const issueIcon = '<path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>';
+    const repoIcon = '<path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>';
+    const reviewIcon = '<path d="M1.5 1.75a.75.75 0 0 0-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 0 0 0-1.5H1.5V1.75Zm14.28 2.53a.75.75 0 0 0-1.06-1.06L10 7.94 7.28 5.22a.75.75 0 0 0-1.06 0L3.22 8.22a.75.75 0 0 0 1.06 1.06L7 6.56l2.72 2.72a.75.75 0 0 0 1.06 0l5-5Z"/>';
 
     return `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
   <defs>
     <style>
-      .bg { fill: ${c.bg}; stroke: ${c.border}; stroke-width: 1px; rx: 10px; }
-      .card { fill: ${c.card}; stroke: ${c.cardBorder}; stroke-width: 1px; rx: 6px; }
-      .label { fill: ${c.label}; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; }
-      .value { fill: ${c.value}; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 14px; font-weight: 600; text-anchor: end; }
+      .label { fill: ${c.label}; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+      .value { fill: ${c.value}; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; font-size: 15px; font-weight: 800; }
     </style>
   </defs>
 
-  <rect class="bg" x="0.5" y="0.5" width="479" height="239" />
+  <!-- Outer Brutalist Hard Shadow -->
+  <rect x="6" y="6" width="470" height="230" fill="${c.shadow}" />
+
+  <!-- Outer Container Card -->
+  <rect x="2" y="2" width="470" height="230" fill="${c.bg}" stroke="${c.border}" stroke-width="${isDark ? '2' : '2.5'}" />
 
   <!-- Row 1 -->
-  <!-- Stars -->
-  <g transform="translate(20, 22)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.star}">
-      <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
-    </svg>
-    <text class="label" x="38" y="25">Stars</text>
-    <text class="value" x="198" y="25">${stats.stars}</text>
-  </g>
-
-  <!-- Forks -->
-  <g transform="translate(250, 22)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.forks}">
-      <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
-    </svg>
-    <text class="label" x="38" y="25">Forks</text>
-    <text class="value" x="198" y="25">${stats.forks}</text>
-  </g>
+  ${card(17, 18, c.metrics.stars, starIcon, 'STARS', stats.stars)}
+  ${card(247, 18, c.metrics.forks, forkIcon, 'FORKS', stats.forks)}
 
   <!-- Row 2 -->
-  <!-- Commits -->
-  <g transform="translate(20, 74)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.commits}">
-      <path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
-    </svg>
-    <text class="label" x="38" y="25">Commits</text>
-    <text class="value" x="198" y="25">${stats.commits}</text>
-  </g>
-
-  <!-- PRs -->
-  <g transform="translate(250, 74)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.prs}">
-      <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm2.25-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 8.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.82-1.7l1.45-1.45a.75.75 0 0 1 1.06 1.06l-2.75 2.75a.75.75 0 0 1-1.06 0l-2.75-2.75a.75.75 0 0 1 1.06-1.06l1.45 1.45V5.372a2.25 2.25 0 1 1 1.5 0v3.678Z"/>
-    </svg>
-    <text class="label" x="38" y="25">Pull Requests</text>
-    <text class="value" x="198" y="25">${stats.prs}</text>
-  </g>
+  ${card(17, 70, c.metrics.commits, commitIcon, 'COMMITS', stats.commits)}
+  ${card(247, 70, c.metrics.prs, prIcon, 'PULL REQUESTS', stats.prs)}
 
   <!-- Row 3 -->
-  <!-- Merged -->
-  <g transform="translate(20, 126)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.merged}">
-      <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
-    </svg>
-    <text class="label" x="38" y="25">PRs Merged</text>
-    <text class="value" x="198" y="25">${stats.prs_merged}</text>
-  </g>
-
-  <!-- Issues -->
-  <g transform="translate(250, 126)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.issues}">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
-    </svg>
-    <text class="label" x="38" y="25">Issues</text>
-    <text class="value" x="198" y="25">${stats.issues || stats.issues_closed}</text>
-  </g>
+  ${card(17, 122, c.metrics.merged, mergedIcon, 'PRS MERGED', stats.prs_merged)}
+  ${card(247, 122, c.metrics.issues, issueIcon, 'ISSUES', stats.issues || stats.issues_closed)}
 
   <!-- Row 4 -->
-  <!-- Repos Contributed -->
-  <g transform="translate(20, 178)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.repos}">
-      <path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
-    </svg>
-    <text class="label" x="38" y="25">Repos Contributed</text>
-    <text class="value" x="198" y="25">${stats.repos_contributed}</text>
-  </g>
-
-  <!-- Code Reviews -->
-  <g transform="translate(250, 178)">
-    <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.reviews}">
-      <path d="M1.5 1.75a.75.75 0 0 0-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 0 0 0-1.5H1.5V1.75Zm14.28 2.53a.75.75 0 0 0-1.06-1.06L10 7.94 7.28 5.22a.75.75 0 0 0-1.06 0L3.22 8.22a.75.75 0 0 0 1.06 1.06L7 6.56l2.72 2.72a.75.75 0 0 0 1.06 0l5-5Z"/>
-    </svg>
-    <text class="label" x="38" y="25">Code Reviews</text>
-    <text class="value" x="198" y="25">${stats.reviews}</text>
-  </g>
+  ${card(17, 174, c.metrics.repos, repoIcon, 'REPOS CONTRIB', stats.repos_contributed)}
+  ${card(247, 174, c.metrics.reviews, reviewIcon, 'CODE REVIEWS', stats.reviews)}
 
 </svg>`;
 }

@@ -1,26 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 650 80" width="650" height="80">
   <defs>
     <style>
-      .bg { fill: #ffffff; stroke: #d0d7de; stroke-width: 1px; rx: 10px; }
       .text {
         font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-        font-size: 36px;
-        font-weight: 600;
-        fill: #1f2328;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        fill: #000000;
+      }
+      .badge-text {
+        font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+        font-size: 9px;
+        font-weight: 800;
         letter-spacing: 1px;
+        fill: #000000;
       }
     </style>
     <path id="path0">
       <animate id="d0" attributeName="d" begin="0s" dur="4300ms" fill="freeze"
-        values="m0,40 h0 ; m0,40 h650 ; m0,40 h650 ; m0,40 h650"
+        values="m0,49 h0 ; m0,49 h650 ; m0,49 h650 ; m0,49 h650"
         keyTimes="0;0.74418604651163;0.81395348837209;1" />
     </path>
   </defs>
 
-  <rect class="bg" x="0.5" y="0.5" width="649" height="79" />
+  <!-- Brutalist Hard Shadow -->
+  <rect x="5" y="5" width="639" height="69" fill="#000000" />
 
+  <!-- Main Container -->
+  <rect x="1" y="1" width="639" height="69" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+
+  <!-- Window controls -->
+  <rect x="14" y="12" width="9" height="9" fill="#FF5F56" stroke="#000000" stroke-width="1.2" />
+  <rect x="27" y="12" width="9" height="9" fill="#FFBD2E" stroke="#000000" stroke-width="1.2" />
+  <rect x="40" y="12" width="9" height="9" fill="#27C93F" stroke="#000000" stroke-width="1.2" />
+
+  <!-- Status Chip -->
+  <rect x="540" y="9" width="85" height="17" fill="#FFE600" stroke="#000000" stroke-width="1.2" />
+  <text class="badge-text" x="582.5" y="18" text-anchor="middle" dominant-baseline="central">PROFILE.SH</text>
+
+  <!-- Typing Text -->
   <text class="text" dominant-baseline="middle" x="50%" text-anchor="middle">
     <textPath href="#path0" xlink:href="#path0">Madhav Semwal</textPath>
   </text>
 </svg>
-
