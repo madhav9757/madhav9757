@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="34" viewBox="0 0 112 34">
+  <defs>
+    <style>
+      .btn-label {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        fill: #FFFFFF;
+      }
+    </style>
+  </defs>
+
+  <!-- Brutalist Hard Block Shadow -->
+  <rect x="3" y="3" width="108" height="30" fill="#000000" />
+
+  <!-- Main Button Container -->
+  <rect x="0" y="0" width="108" height="30" fill="#161B22" stroke="#30363D" stroke-width="1.5" />
+
+  <!-- Left Icon Accent Box -->
+  <rect x="0" y="0" width="28" height="30" fill="#FFA116" stroke="#30363D" stroke-width="1.5" />
+
+  <svg x="6" y="7" width="16" height="16" viewBox="0 0 24 24" fill="#FFFFFF">
+    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.3 5.3 0 0 0-1.209 2.104 5 5 0 0 0-.125.513 5.5 5.5 0 0 0 .062 2.362 6 6 0 0 0 .349 1.017 5.9 5.9 0 0 0 1.271 1.818l4.277 4.193l.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.38 1.38 0 0 0-1.951-.003l-2.396 2.392a3.21 3.21 0 0 1-4.442.115l-.034-.031L7.545 15.35a3.3 3.3 0 0 1-.741-1.02a3.1 3.1 0 0 1-.212-.862a3.2 3.2 0 0 1 .074-1.396a3.07 3.07 0 0 1 .684-1.205l3.854-4.126l2.348-2.513c.54-.54.54-1.414.003-1.955A1.374 1.374 0 0 0 13.483 0zm-3.14 17.653a1.374 1.374 0 0 0-.974.404l-5.635 5.526a1.374 1.374 0 0 0 0 1.944a1.374 1.374 0 0 0 1.948 0l5.635-5.526a1.374 1.374 0 0 0-.974-2.348z"/>
+  </svg>
+
+  <!-- Button Text -->
+  <text class="btn-label" x="68" y="15" text-anchor="middle" dominant-baseline="central">LEETCODE</text>
+</svg>

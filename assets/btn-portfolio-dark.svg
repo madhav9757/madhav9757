@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="34" viewBox="0 0 124 34">
+  <defs>
+    <style>
+      .btn-label {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        fill: #FFFFFF;
+      }
+    </style>
+  </defs>
+
+  <!-- Brutalist Hard Block Shadow -->
+  <rect x="3" y="3" width="120" height="30" fill="#000000" />
+
+  <!-- Main Button Container -->
+  <rect x="0" y="0" width="120" height="30" fill="#161B22" stroke="#30363D" stroke-width="1.5" />
+
+  <!-- Left Icon Accent Box -->
+  <rect x="0" y="0" width="28" height="30" fill="#FFE600" stroke="#30363D" stroke-width="1.5" />
+
+  <svg x="6" y="7" width="16" height="16" viewBox="0 0 24 24" fill="#000000">
+    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8 8 0 0 1 18.93 8zM12 4.07a14 14 0 0 1 1.83 3.93h-3.66A14 14 0 0 1 12 4.07zM4.26 14a7.82 7.82 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4zm.81 2h2.95a15.65 15.65 0 0 0 1.38 3.56A8 8 0 0 1 5.07 16zm2.95-8H5.07a8 8 0 0 1 2.37-3.56A15.65 15.65 0 0 0 8.02 8zM12 19.93a14 14 0 0 1-1.83-3.93h3.66A14 14 0 0 1 12 19.93zm2.14-5.93H9.86a14.7 14.7 0 0 1 0-4h4.28a14.7 14.7 0 0 1 0 4zm1.48 5.56a15.65 15.65 0 0 0 1.38-3.56h2.95a8 8 0 0 1-2.37 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a7.82 7.82 0 0 1 0 4z"/>
+  </svg>
+
+  <!-- Button Text -->
+  <text class="btn-label" x="74" y="15" text-anchor="middle" dominant-baseline="central">PORTFOLIO</text>
+</svg>
