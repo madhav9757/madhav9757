@@ -14,7 +14,11 @@
   </picture>
 </td>
 <td width="35%" valign="top" align="center">
-<img src="assets/giphy.webp" width="280" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/giphy-dark.webp">
+    <source media="(prefers-color-scheme: light)" srcset="assets/giphy-light.webp">
+    <img src="assets/giphy-dark.webp" width="100%" alt="Anime Illustration" />
+  </picture>
 </td>
 </tr>
 <tr>
