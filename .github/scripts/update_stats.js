@@ -232,14 +232,47 @@ async function fetchStats() {
     }
 }
 
-function updateSvg(stats) {
-    const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
+function renderSvgContent(stats, theme = 'dark') {
+    const isDark = theme === 'dark';
+    const c = isDark ? {
+        bg: '#0d1117',
+        border: '#30363d',
+        card: '#161b22',
+        cardBorder: '#21262d',
+        label: '#8b949e',
+        value: '#c9d1d9',
+        forks: '#8b949e',
+        commits: '#8b949e',
+        prs: '#3fb950',
+        merged: '#a371f7',
+        issues: '#a371f7',
+        repos: '#8b949e',
+        reviews: '#2ea043',
+        star: '#e3b341'
+    } : {
+        bg: '#ffffff',
+        border: '#d0d7de',
+        card: '#f6f8fa',
+        cardBorder: '#d0d7de',
+        label: '#57606a',
+        value: '#1f2328',
+        forks: '#57606a',
+        commits: '#57606a',
+        prs: '#1a7f37',
+        merged: '#8250df',
+        issues: '#8250df',
+        repos: '#57606a',
+        reviews: '#1a7f37',
+        star: '#d4a72c'
+    };
+
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
   <defs>
     <style>
-      .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 10px; }
-      .card { fill: #161b22; stroke: #21262d; stroke-width: 1px; rx: 6px; }
-      .label { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; }
-      .value { fill: #c9d1d9; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 14px; font-weight: 600; text-anchor: end; }
+      .bg { fill: ${c.bg}; stroke: ${c.border}; stroke-width: 1px; rx: 10px; }
+      .card { fill: ${c.card}; stroke: ${c.cardBorder}; stroke-width: 1px; rx: 6px; }
+      .label { fill: ${c.label}; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; }
+      .value { fill: ${c.value}; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 14px; font-weight: 600; text-anchor: end; }
     </style>
   </defs>
 
@@ -249,7 +282,7 @@ function updateSvg(stats) {
   <!-- Stars -->
   <g transform="translate(20, 22)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#e3b341">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.star}">
       <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
     </svg>
     <text class="label" x="38" y="25">Stars</text>
@@ -259,7 +292,7 @@ function updateSvg(stats) {
   <!-- Forks -->
   <g transform="translate(250, 22)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#8b949e">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.forks}">
       <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
     </svg>
     <text class="label" x="38" y="25">Forks</text>
@@ -270,7 +303,7 @@ function updateSvg(stats) {
   <!-- Commits -->
   <g transform="translate(20, 74)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#8b949e">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.commits}">
       <path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
     </svg>
     <text class="label" x="38" y="25">Commits</text>
@@ -280,7 +313,7 @@ function updateSvg(stats) {
   <!-- PRs -->
   <g transform="translate(250, 74)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#3fb950">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.prs}">
       <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm2.25-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 8.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.82-1.7l1.45-1.45a.75.75 0 0 1 1.06 1.06l-2.75 2.75a.75.75 0 0 1-1.06 0l-2.75-2.75a.75.75 0 0 1 1.06-1.06l1.45 1.45V5.372a2.25 2.25 0 1 1 1.5 0v3.678Z"/>
     </svg>
     <text class="label" x="38" y="25">Pull Requests</text>
@@ -291,7 +324,7 @@ function updateSvg(stats) {
   <!-- Merged -->
   <g transform="translate(20, 126)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#a371f7">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.merged}">
       <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
     </svg>
     <text class="label" x="38" y="25">PRs Merged</text>
@@ -301,7 +334,7 @@ function updateSvg(stats) {
   <!-- Issues -->
   <g transform="translate(250, 126)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#a371f7">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.issues}">
       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
     </svg>
     <text class="label" x="38" y="25">Issues</text>
@@ -312,7 +345,7 @@ function updateSvg(stats) {
   <!-- Repos Contributed -->
   <g transform="translate(20, 178)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#8b949e">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.repos}">
       <path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
     </svg>
     <text class="label" x="38" y="25">Repos Contributed</text>
@@ -322,7 +355,7 @@ function updateSvg(stats) {
   <!-- Code Reviews -->
   <g transform="translate(250, 178)">
     <rect class="card" x="0" y="0" width="210" height="40" />
-    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="#2ea043">
+    <svg x="12" y="12" width="16" height="16" viewBox="0 0 16 16" fill="${c.reviews}">
       <path d="M1.5 1.75a.75.75 0 0 0-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 0 0 0-1.5H1.5V1.75Zm14.28 2.53a.75.75 0 0 0-1.06-1.06L10 7.94 7.28 5.22a.75.75 0 0 0-1.06 0L3.22 8.22a.75.75 0 0 0 1.06 1.06L7 6.56l2.72 2.72a.75.75 0 0 0 1.06 0l5-5Z"/>
     </svg>
     <text class="label" x="38" y="25">Code Reviews</text>
@@ -330,17 +363,23 @@ function updateSvg(stats) {
   </g>
 
 </svg>`;
+}
 
-    const targetPath = fs.existsSync(path.resolve(process.cwd(), 'assets')) 
-        ? path.resolve(process.cwd(), 'assets/stats-card.svg')
-        : path.resolve(__dirname, '../../assets/stats-card.svg');
+function updateSvg(stats) {
+    const assetsDir = fs.existsSync(path.resolve(process.cwd(), 'assets')) 
+        ? path.resolve(process.cwd(), 'assets')
+        : path.resolve(__dirname, '../../assets');
 
-    const assetsDir = path.dirname(targetPath);
     if (!fs.existsSync(assetsDir)) {
         fs.mkdirSync(assetsDir, { recursive: true });
     }
 
-    fs.writeFileSync(targetPath, svgContent, 'utf-8');
+    const darkSvg = renderSvgContent(stats, 'dark');
+    const lightSvg = renderSvgContent(stats, 'light');
+
+    fs.writeFileSync(path.join(assetsDir, 'stats-card-dark.svg'), darkSvg, 'utf-8');
+    fs.writeFileSync(path.join(assetsDir, 'stats-card-light.svg'), lightSvg, 'utf-8');
+    fs.writeFileSync(path.join(assetsDir, 'stats-card.svg'), darkSvg, 'utf-8');
 }
 
 async function main() {
@@ -353,7 +392,7 @@ async function main() {
     const stats = await fetchStats();
     if (stats) {
         updateSvg(stats);
-        console.log("Successfully updated assets/stats-card.svg with stats:", stats);
+        console.log("Successfully updated dark, light, and default stats cards in assets/ with stats:", stats);
     } else {
         console.error("Failed to fetch stats");
         process.exit(1);

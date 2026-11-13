@@ -1,9 +1,17 @@
 <table width="100%">
 <tr>
 <td width="65%" valign="top" align="center">
-<img src="assets/typing.svg" width="100%" />
-<br/>
-<img src="assets/stats-card.svg" width="100%" alt="GitHub Activity Stats" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/typing-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/typing-light.svg">
+    <img src="assets/typing-dark.svg" width="100%" />
+  </picture>
+  <br/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/stats-card-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/stats-card-light.svg">
+    <img src="assets/stats-card-dark.svg" width="100%" alt="GitHub Activity Stats" />
+  </picture>
 </td>
 <td width="35%" valign="top" align="center">
 <img src="assets/giphy.webp" width="280" />

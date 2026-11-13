@@ -44,13 +44,13 @@ jobs:
         run: |
           echo "Starting GitHub GraphQL data aggregation..."
           node .github/scripts/update_stats.js
-          echo "Done fetching and updating assets/stats-card.svg!"
+          echo "Done fetching and updating assets/stats-card SVGs!"
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated update: GitHub Stats SVG"
-          file_pattern: "assets/stats-card.svg"
+          file_pattern: "assets/stats-card*.svg"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
           commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
