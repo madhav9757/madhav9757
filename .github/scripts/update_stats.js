@@ -79,7 +79,9 @@ async function fetchAllTimeContributions(username, token) {
         queryParts += `
         year${year}: contributionsCollection(from: "${from}", to: "${to}") {
             totalCommitContributions
+            totalPullRequestContributions
             totalPullRequestReviewContributions
+            totalIssueContributions
             restrictedContributionsCount
         }
         `;
@@ -112,16 +114,29 @@ async function fetchAllTimeContributions(username, token) {
 
     let totalCommits = 0;
     let totalReviews = 0;
+    let totalContributions = 0;
     const collections = commitsData.data.user;
     for (let year = startYear; year <= currentYear; year++) {
         const yearData = collections[`year${year}`];
         if (yearData) {
-            // Include both public commits and private (restricted) contributions
-            totalCommits += (yearData.totalCommitContributions || 0) + (yearData.restrictedContributionsCount || 0);
-            totalReviews += (yearData.totalPullRequestReviewContributions || 0);
+            const commits = yearData.totalCommitContributions || 0;
+            const reviews = yearData.totalPullRequestReviewContributions || 0;
+            const prs = yearData.totalPullRequestContributions || 0;
+            const issues = yearData.totalIssueContributions || 0;
+            const restricted = yearData.restrictedContributionsCount || 0;
+
+            // Pure commits count (accurate)
+            totalCommits += commits;
+            totalReviews += reviews;
+            // Total contributions combining commits, PRs, reviews, issues, and private activity
+            totalContributions += (commits + reviews + prs + issues + restricted);
         }
     }
-    return { commits: totalCommits, reviews: totalReviews };
+    return {
+        commits: totalCommits,
+        reviews: totalReviews,
+        totalContributions: totalContributions
+    };
 }
 
 async function fetchSearchCount(query, token) {
@@ -214,13 +229,17 @@ async function fetchStats() {
         const totalPrs = Math.max(user.pullRequests?.totalCount || 0, searchPrs || 0);
         const totalMergedPrs = Math.max(user.mergedPullRequests?.totalCount || 0, searchMergedPrs || 0);
         const totalIssues = Math.max(user.issues?.totalCount || 0, searchIssues || 0);
+        const mergeRate = totalPrs > 0
+            ? ((totalMergedPrs / totalPrs) * 100).toFixed(1) + '%'
+            : '0%';
 
         return {
             stars: stars.toString(),
             forks: forks.toString(),
             commits: allTime.commits >= 1000 ? (allTime.commits / 1000).toFixed(1) + 'K' : allTime.commits.toString(),
+            contribs: allTime.totalContributions >= 1000 ? (allTime.totalContributions / 1000).toFixed(1) + 'K' : allTime.totalContributions.toString(),
             prs: totalPrs.toString(),
-            prs_merged: totalMergedPrs.toString(),
+            prs_merged: mergeRate,
             issues: totalIssues.toString(),
             issues_closed: totalIssues.toString(),
             repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
@@ -245,14 +264,15 @@ function renderSvgContent(stats, theme = 'dark') {
         label: '#8B949E',
         value: '#FFFFFF',
         metrics: {
-            stars:   { bg: '#2D2305', border: '#FFE600', icon: '#FFE600' },
-            forks:   { bg: '#1E2530', border: '#8B949E', icon: '#E2E8F0' },
-            commits: { bg: '#0C2B42', border: '#38BDF8', icon: '#38BDF8' },
-            prs:     { bg: '#0B331A', border: '#4ADE80', icon: '#4ADE80' },
-            merged:  { bg: '#291542', border: '#C084FC', icon: '#C084FC' },
-            issues:  { bg: '#380E23', border: '#F472B6', icon: '#F472B6' },
-            repos:   { bg: '#092D33', border: '#2DD4BF', icon: '#2DD4BF' },
-            reviews: { bg: '#0A3022', border: '#34D399', icon: '#34D399' }
+            stars:    { bg: '#2D2305', border: '#FFE600', icon: '#FFE600' },
+            contribs: { bg: '#3B1E08', border: '#FB923C', icon: '#FB923C' },
+            forks:    { bg: '#1E2530', border: '#8B949E', icon: '#E2E8F0' },
+            commits:  { bg: '#0C2B42', border: '#38BDF8', icon: '#38BDF8' },
+            prs:      { bg: '#0B331A', border: '#4ADE80', icon: '#4ADE80' },
+            merged:   { bg: '#291542', border: '#C084FC', icon: '#C084FC' },
+            issues:   { bg: '#380E23', border: '#F472B6', icon: '#F472B6' },
+            repos:    { bg: '#092D33', border: '#2DD4BF', icon: '#2DD4BF' },
+            reviews:  { bg: '#0A3022', border: '#34D399', icon: '#34D399' }
         }
     } : {
         bg: '#FFFFFF',
@@ -264,14 +284,15 @@ function renderSvgContent(stats, theme = 'dark') {
         label: '#000000',
         value: '#000000',
         metrics: {
-            stars:   { bg: '#FFE600', border: '#000000', icon: '#000000' },
-            forks:   { bg: '#E2E8F0', border: '#000000', icon: '#000000' },
-            commits: { bg: '#7DD3FC', border: '#000000', icon: '#000000' },
-            prs:     { bg: '#86EFAC', border: '#000000', icon: '#000000' },
-            merged:  { bg: '#D8B4FE', border: '#000000', icon: '#000000' },
-            issues:  { bg: '#F472B6', border: '#000000', icon: '#000000' },
-            repos:   { bg: '#67E8F9', border: '#000000', icon: '#000000' },
-            reviews: { bg: '#6EE7B7', border: '#000000', icon: '#000000' }
+            stars:    { bg: '#FFE600', border: '#000000', icon: '#000000' },
+            contribs: { bg: '#FB923C', border: '#000000', icon: '#000000' },
+            forks:    { bg: '#E2E8F0', border: '#000000', icon: '#000000' },
+            commits:  { bg: '#7DD3FC', border: '#000000', icon: '#000000' },
+            prs:      { bg: '#86EFAC', border: '#000000', icon: '#000000' },
+            merged:   { bg: '#D8B4FE', border: '#000000', icon: '#000000' },
+            issues:   { bg: '#F472B6', border: '#000000', icon: '#000000' },
+            repos:    { bg: '#67E8F9', border: '#000000', icon: '#000000' },
+            reviews:  { bg: '#6EE7B7', border: '#000000', icon: '#000000' }
         }
     };
 
@@ -295,6 +316,7 @@ function renderSvgContent(stats, theme = 'dark') {
     }
 
     const starIcon = '<path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>';
+    const contribIcon = '<path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5H2.5Zm10.75-2a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25V6h10.75V5.5Z"/>';
     const forkIcon = '<path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>';
     const commitIcon = '<path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>';
     const prIcon = '<path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm2.25-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 8.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.82-1.7l1.45-1.45a.75.75 0 0 1 1.06 1.06l-2.75 2.75a.75.75 0 0 1-1.06 0l-2.75-2.75a.75.75 0 0 1 1.06-1.06l1.45 1.45V5.372a2.25 2.25 0 1 1 1.5 0v3.678Z"/>';
@@ -319,14 +341,14 @@ function renderSvgContent(stats, theme = 'dark') {
 
   <!-- Row 1 -->
   ${card(17, 18, c.metrics.stars, starIcon, 'STARS', stats.stars)}
-  ${card(247, 18, c.metrics.forks, forkIcon, 'FORKS', stats.forks)}
+  ${card(247, 18, c.metrics.contribs, contribIcon, 'TOTAL CONTRIBS', stats.contribs)}
 
   <!-- Row 2 -->
   ${card(17, 70, c.metrics.commits, commitIcon, 'COMMITS', stats.commits)}
   ${card(247, 70, c.metrics.prs, prIcon, 'PULL REQUESTS', stats.prs)}
 
   <!-- Row 3 -->
-  ${card(17, 122, c.metrics.merged, mergedIcon, 'PRS MERGED', stats.prs_merged)}
+  ${card(17, 122, c.metrics.merged, mergedIcon, 'MERGE RATE', stats.prs_merged)}
   ${card(247, 122, c.metrics.issues, issueIcon, 'ISSUES', stats.issues || stats.issues_closed)}
 
   <!-- Row 4 -->

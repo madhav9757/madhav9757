@@ -23,7 +23,7 @@
 </tr>
 <tr>
 <td colspan="2" align="center" style="padding: 14px 0;">
-  <img src="assets/kyubey.gif" height="30" align="absmiddle" />&nbsp;&nbsp;
+  <img src="assets/kyubey.gif" height="30" align="absmiddle" />
   <a href="https://www.linkedin.com/in/madhav9757" style="text-decoration: none; margin: 0 4px;">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/btn-linkedin-dark.svg">
