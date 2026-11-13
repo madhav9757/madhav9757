@@ -1,29 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="112" height="34" viewBox="0 0 112 34">
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="34" viewBox="0 0 116 34">
   <defs>
     <style>
       .btn-label {
         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
         font-size: 11px;
         font-weight: 800;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.8px;
         fill: #000000;
       }
     </style>
   </defs>
 
   <!-- Brutalist Hard Block Shadow -->
-  <rect x="3" y="3" width="108" height="30" fill="#000000" />
+  <rect x="3" y="3" width="112" height="30" fill="#000000" shape-rendering="crispEdges" />
 
   <!-- Main Button Container -->
-  <rect x="0" y="0" width="108" height="30" fill="#FFFFFF" stroke="#000000" stroke-width="1.8" />
+  <rect x="0" y="0" width="112" height="30" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
 
   <!-- Left Icon Accent Box -->
-  <rect x="0" y="0" width="28" height="30" fill="#FFA116" stroke="#000000" stroke-width="1.8" />
+  <rect x="0" y="0" width="30" height="30" fill="#FFA116" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
 
-  <svg x="6" y="7" width="16" height="16" viewBox="0 0 24 24" fill="#FFFFFF">
-    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.3 5.3 0 0 0-1.209 2.104 5 5 0 0 0-.125.513 5.5 5.5 0 0 0 .062 2.362 6 6 0 0 0 .349 1.017 5.9 5.9 0 0 0 1.271 1.818l4.277 4.193l.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.38 1.38 0 0 0-1.951-.003l-2.396 2.392a3.21 3.21 0 0 1-4.442.115l-.034-.031L7.545 15.35a3.3 3.3 0 0 1-.741-1.02a3.1 3.1 0 0 1-.212-.862a3.2 3.2 0 0 1 .074-1.396a3.07 3.07 0 0 1 .684-1.205l3.854-4.126l2.348-2.513c.54-.54.54-1.414.003-1.955A1.374 1.374 0 0 0 13.483 0zm-3.14 17.653a1.374 1.374 0 0 0-.974.404l-5.635 5.526a1.374 1.374 0 0 0 0 1.944a1.374 1.374 0 0 0 1.948 0l5.635-5.526a1.374 1.374 0 0 0-.974-2.348z"/>
+  <!-- Centered Icon (18x18 inside 30x30 on integer coords) -->
+  <svg x="6" y="6" width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" stroke="#FFFFFF">
+    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.38 1.38 0 0 0-1.951-.003l-2.396 2.392a3.32 3.32 0 0 1-4.757.062l-.048-.045l-4.276-4.193a3.48 3.48 0 0 1-.722-1.05a3.47 3.47 0 0 1-.212-.589a3.34 3.34 0 0 1-.035-1.419a3.367 3.367 0 0 1 .746-1.332l3.854-4.125l5.406-5.788a1.375 1.375 0 0 0-.96-2.339ZM22.5 10.125H10.5a1.375 1.375 0 0 0 0 2.75h12a1.375 1.375 0 0 0 0-2.75Z"/>
   </svg>
 
   <!-- Button Text -->
-  <text class="btn-label" x="68" y="15" text-anchor="middle" dominant-baseline="central">LEETCODE</text>
+  <text class="btn-label" x="71" y="15" text-anchor="middle" dominant-baseline="central">LEETCODE</text>
 </svg>

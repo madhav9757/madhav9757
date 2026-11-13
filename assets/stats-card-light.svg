@@ -7,21 +7,22 @@
   </defs>
 
   <!-- Outer Brutalist Hard Shadow -->
-  <rect x="6" y="6" width="470" height="265" fill="#000000" />
+  <rect x="6" y="6" width="470" height="265" fill="#000000" shape-rendering="crispEdges" />
 
   <!-- Outer Container Card -->
-  <rect x="2" y="2" width="470" height="265" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <rect x="2" y="2" width="470" height="265" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" shape-rendering="crispEdges" />
 
   <!-- Row 1 -->
   
     <g transform="translate(17, 16)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#FFE600" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
+      <rect x="0" y="0" width="35" height="35" fill="#FFE600" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
         <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
       </svg>
       <!-- Label -->
@@ -32,13 +33,14 @@
   
     <g transform="translate(247, 16)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#FB923C" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5H2.5Zm10.75-2a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25V6h10.75V5.5Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#FB923C" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5H2.5Zm10.75-2a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25V6h10.75V5.5Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">TOTAL CONTRIBS</text>
@@ -50,13 +52,14 @@
   
     <g transform="translate(17, 66)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#7DD3FC" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#7DD3FC" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">COMMITS</text>
@@ -66,13 +69,14 @@
   
     <g transform="translate(247, 66)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#86EFAC" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm2.25-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 8.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.82-1.7l1.45-1.45a.75.75 0 0 1 1.06 1.06l-2.75 2.75a.75.75 0 0 1-1.06 0l-2.75-2.75a.75.75 0 0 1 1.06-1.06l1.45 1.45V5.372a2.25 2.25 0 1 1 1.5 0v3.678Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#86EFAC" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm2.25-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 8.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.82-1.7l1.45-1.45a.75.75 0 0 1 1.06 1.06l-2.75 2.75a.75.75 0 0 1-1.06 0l-2.75-2.75a.75.75 0 0 1 1.06-1.06l1.45 1.45V5.372a2.25 2.25 0 1 1 1.5 0v3.678Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">PULL REQUESTS</text>
@@ -84,13 +88,14 @@
   
     <g transform="translate(17, 116)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#D8B4FE" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#D8B4FE" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">MERGE RATE</text>
@@ -100,13 +105,14 @@
   
     <g transform="translate(247, 116)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#F472B6" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#F472B6" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">ISSUES</text>
@@ -118,13 +124,14 @@
   
     <g transform="translate(17, 166)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#67E8F9" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#67E8F9" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">REPOS CONTRIB</text>
@@ -134,13 +141,14 @@
   
     <g transform="translate(247, 166)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#6EE7B7" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M1.5 1.75a.75.75 0 0 0-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 0 0 0-1.5H1.5V1.75Zm14.28 2.53a.75.75 0 0 0-1.06-1.06L10 7.94 7.28 5.22a.75.75 0 0 0-1.06 0L3.22 8.22a.75.75 0 0 0 1.06 1.06L7 6.56l2.72 2.72a.75.75 0 0 0 1.06 0l5-5Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#6EE7B7" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M1.5 1.75a.75.75 0 0 0-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 0 0 0-1.5H1.5V1.75Zm14.28 2.53a.75.75 0 0 0-1.06-1.06L10 7.94 7.28 5.22a.75.75 0 0 0-1.06 0L3.22 8.22a.75.75 0 0 0 1.06 1.06L7 6.56l2.72 2.72a.75.75 0 0 0 1.06 0l5-5Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">CODE REVIEWS</text>
@@ -152,13 +160,14 @@
   
     <g transform="translate(17, 216)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#FB7185" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M8.22 1.034a.75.75 0 0 0-.44 0C5.1 1.77 3 4.25 3 7.5a5 5 0 0 0 10 0c0-3.25-2.1-5.73-4.78-6.466ZM8 14A3.5 3.5 0 0 1 4.5 7.5c0-2.3 1.4-4.14 3.5-4.88 2.1.74 3.5 2.58 3.5 4.88A3.5 3.5 0 0 1 8 14Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#FB7185" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M7.75 0a.75.75 0 0 1 .75.75c0 1.84 1.13 2.92 2.14 3.88.94.9 1.86 1.77 1.86 3.62 0 2.49-2.01 4.5-4.5 4.5S3.5 10.74 3.5 8.25c0-1.63.79-2.58 1.63-3.57.82-.96 1.62-1.9 1.62-3.93a.75.75 0 0 1 1 0ZM6.75 9.25c0-.97.78-1.75 1.75-1.75s1.75.78 1.75 1.75c0 .97-.78 1.75-1.75 1.75s-1.75-.78-1.75-1.75Z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">MAX STREAK</text>
@@ -168,13 +177,14 @@
   
     <g transform="translate(247, 216)">
       <!-- Brutalist Hard Shadow -->
-      <rect x="3" y="3" width="207" height="35" fill="#000000" />
+      <rect x="3" y="3" width="207" height="35" fill="#000000" shape-rendering="crispEdges" />
       <!-- Main Card -->
-      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+      <rect x="0" y="0" width="207" height="35" fill="#FFFFFF" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
       <!-- Sharp Icon Box -->
-      <rect x="0" y="0" width="35" height="35" fill="#F59E0B" stroke="#000000" stroke-width="1.5" />
-      <svg x="9.5" y="9.5" width="16" height="16" viewBox="0 0 16 16" fill="#000000">
-        <path d="M4 1.75C4 .784 4.784 0 5.75 0h4.5C11.216 0 12 .784 12 1.75V2h1.5A2.5 2.5 0 0 1 16 4.5v1A4.5 4.5 0 0 1 11.5 10h-.07a5.502 5.502 0 0 1-4.86 3.93A2 2 0 0 0 8 15a2 2 0 0 0 1.43-1.07A5.502 5.502 0 0 1 4.57 10H4.5A4.5 4.5 0 0 1 0 5.5v-1A2.5 2.5 0 0 1 2.5 2H4v-.25ZM2.5 3.5c-.552 0-1 .448-1 1v1c0 1.657 1.343 3 3 3h.5V3.5h-2.5Zm11 4.5c1.657 0 3-1.343 3-3v-1c0-.552-.448-1-1-1H13v6.5h.5Z"/>
+      <rect x="0" y="0" width="35" height="35" fill="#F59E0B" stroke="#000000" stroke-width="2" shape-rendering="crispEdges" />
+      <!-- Centered Icon on exact integer coordinates (zero blur) -->
+      <svg x="9" y="9" width="17" height="17" viewBox="0 0 16 16" fill="#000000">
+        <path fill-rule="evenodd" d="M3 1h10v1h1.5A1.5 1.5 0 0 1 16 3.5v1A3.5 3.5 0 0 1 12.8 8a4.5 4.5 0 0 1-3.8 3.9V13h2a1 1 0 0 1 1 1v1H4v-1a1 1 0 0 1 1-1h2v-1.1A4.5 4.5 0 0 1 3.2 8 3.5 3.5 0 0 1 0 4.5v-1A1.5 1.5 0 0 1 1.5 2H3V1zm1 1v5.5a3.5 3.5 0 0 0 7 0V2H4zM1.5 3.5H3V7A2 2 0 0 1 1.5 5V3.5zm13 0H13V7a2 2 0 0 0 1.5-2V3.5z"/>
       </svg>
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">DEV RANK</text>
