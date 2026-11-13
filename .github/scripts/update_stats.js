@@ -171,6 +171,16 @@ async function fetchStats() {
             forkCount
           }
         }
+        contributionsCollection {
+          contributionCalendar {
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+              }
+            }
+          }
+        }
         pullRequests(first: 1, states: [MERGED, CLOSED, OPEN]) {
           totalCount
         }
@@ -233,6 +243,38 @@ async function fetchStats() {
             ? ((totalMergedPrs / totalPrs) * 100).toFixed(1) + '%'
             : '0%';
 
+        // Calculate max streak from contributionCalendar
+        const cal = user.contributionsCollection?.contributionCalendar;
+        let longestStreak = 0;
+        let tempStreak = 0;
+        if (cal?.weeks) {
+            const days = [];
+            for (const w of cal.weeks) {
+                for (const d of w.contributionDays) {
+                    days.push({ date: d.date, count: d.contributionCount });
+                }
+            }
+            days.sort((a, b) => a.date.localeCompare(b.date));
+            for (const d of days) {
+                if (d.count > 0) {
+                    tempStreak++;
+                    if (tempStreak > longestStreak) longestStreak = tempStreak;
+                } else {
+                    tempStreak = 0;
+                }
+            }
+        }
+        const streakStr = longestStreak > 0 ? `${longestStreak} DAYS` : '0 DAYS';
+
+        // Calculate Dev Rank
+        const rawMerge = totalPrs > 0 ? (totalMergedPrs / totalPrs) * 100 : 0;
+        let devRank = 'A-TIER';
+        if (rawMerge >= 85 && (allTime.totalContributions >= 1000 || allTime.commits >= 1000)) {
+            devRank = 'S-TIER';
+        } else if (rawMerge >= 75) {
+            devRank = 'A+';
+        }
+
         return {
             stars: stars.toString(),
             forks: forks.toString(),
@@ -243,7 +285,9 @@ async function fetchStats() {
             issues: totalIssues.toString(),
             issues_closed: totalIssues.toString(),
             repos_contributed: user.repositoriesContributedTo.totalCount.toString(),
-            reviews: allTime.reviews.toString()
+            reviews: allTime.reviews.toString(),
+            streak: streakStr,
+            dev_rank: devRank
         };
     } catch (e) {
         console.error(`Error fetching stats: ${e.message || e}`);
@@ -272,7 +316,9 @@ function renderSvgContent(stats, theme = 'dark') {
             merged:   { bg: '#291542', border: '#C084FC', icon: '#C084FC' },
             issues:   { bg: '#380E23', border: '#F472B6', icon: '#F472B6' },
             repos:    { bg: '#092D33', border: '#2DD4BF', icon: '#2DD4BF' },
-            reviews:  { bg: '#0A3022', border: '#34D399', icon: '#34D399' }
+            reviews:  { bg: '#0A3022', border: '#34D399', icon: '#34D399' },
+            streak:   { bg: '#3B0D18', border: '#FB7185', icon: '#FB7185' },
+            rank:     { bg: '#3D2600', border: '#F59E0B', icon: '#F59E0B' }
         }
     } : {
         bg: '#FFFFFF',
@@ -292,7 +338,9 @@ function renderSvgContent(stats, theme = 'dark') {
             merged:   { bg: '#D8B4FE', border: '#000000', icon: '#000000' },
             issues:   { bg: '#F472B6', border: '#000000', icon: '#000000' },
             repos:    { bg: '#67E8F9', border: '#000000', icon: '#000000' },
-            reviews:  { bg: '#6EE7B7', border: '#000000', icon: '#000000' }
+            reviews:  { bg: '#6EE7B7', border: '#000000', icon: '#000000' },
+            streak:   { bg: '#FB7185', border: '#000000', icon: '#000000' },
+            rank:     { bg: '#F59E0B', border: '#000000', icon: '#000000' }
         }
     };
 
@@ -324,8 +372,10 @@ function renderSvgContent(stats, theme = 'dark') {
     const issueIcon = '<path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>';
     const repoIcon = '<path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>';
     const reviewIcon = '<path d="M1.5 1.75a.75.75 0 0 0-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 0 0 0-1.5H1.5V1.75Zm14.28 2.53a.75.75 0 0 0-1.06-1.06L10 7.94 7.28 5.22a.75.75 0 0 0-1.06 0L3.22 8.22a.75.75 0 0 0 1.06 1.06L7 6.56l2.72 2.72a.75.75 0 0 0 1.06 0l5-5Z"/>';
+    const streakIcon = '<path d="M8.22 1.034a.75.75 0 0 0-.44 0C5.1 1.77 3 4.25 3 7.5a5 5 0 0 0 10 0c0-3.25-2.1-5.73-4.78-6.466ZM8 14A3.5 3.5 0 0 1 4.5 7.5c0-2.3 1.4-4.14 3.5-4.88 2.1.74 3.5 2.58 3.5 4.88A3.5 3.5 0 0 1 8 14Z"/>';
+    const rankIcon = '<path d="M4 1.75C4 .784 4.784 0 5.75 0h4.5C11.216 0 12 .784 12 1.75V2h1.5A2.5 2.5 0 0 1 16 4.5v1A4.5 4.5 0 0 1 11.5 10h-.07a5.502 5.502 0 0 1-4.86 3.93A2 2 0 0 0 8 15a2 2 0 0 0 1.43-1.07A5.502 5.502 0 0 1 4.57 10H4.5A4.5 4.5 0 0 1 0 5.5v-1A2.5 2.5 0 0 1 2.5 2H4v-.25ZM2.5 3.5c-.552 0-1 .448-1 1v1c0 1.657 1.343 3 3 3h.5V3.5h-2.5Zm11 4.5c1.657 0 3-1.343 3-3v-1c0-.552-.448-1-1-1H13v6.5h.5Z"/>';
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="290" viewBox="0 0 480 290">
   <defs>
     <style>
       .label { fill: ${c.label}; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
@@ -334,10 +384,10 @@ function renderSvgContent(stats, theme = 'dark') {
   </defs>
 
   <!-- Outer Brutalist Hard Shadow -->
-  <rect x="6" y="6" width="470" height="230" fill="${c.shadow}" />
+  <rect x="6" y="6" width="470" height="280" fill="${c.shadow}" />
 
   <!-- Outer Container Card -->
-  <rect x="2" y="2" width="470" height="230" fill="${c.bg}" stroke="${c.border}" stroke-width="${isDark ? '2' : '2.5'}" />
+  <rect x="2" y="2" width="470" height="280" fill="${c.bg}" stroke="${c.border}" stroke-width="${isDark ? '2' : '2.5'}" />
 
   <!-- Row 1 -->
   ${card(17, 18, c.metrics.stars, starIcon, 'STARS', stats.stars)}
@@ -354,6 +404,10 @@ function renderSvgContent(stats, theme = 'dark') {
   <!-- Row 4 -->
   ${card(17, 174, c.metrics.repos, repoIcon, 'REPOS CONTRIB', stats.repos_contributed)}
   ${card(247, 174, c.metrics.reviews, reviewIcon, 'CODE REVIEWS', stats.reviews)}
+
+  <!-- Row 5 -->
+  ${card(17, 226, c.metrics.streak, streakIcon, 'MAX STREAK', stats.streak)}
+  ${card(247, 226, c.metrics.rank, rankIcon, 'DEV RANK', stats.dev_rank)}
 
 </svg>`;
 }
