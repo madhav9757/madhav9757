@@ -2,7 +2,7 @@
 <tr>
 <td width="65%" valign="top" align="center">
 <img src="assets/typing.svg" width="100%" />
-<br/><br/>
+<br/>
 <img src="assets/stats-card.svg" width="100%" alt="GitHub Activity Stats" />
 </td>
 <td width="35%" valign="top" align="center">
