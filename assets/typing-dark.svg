@@ -34,9 +34,7 @@
   <rect x="27" y="12" width="9" height="9" fill="#FFBD2E" stroke="#30363D" stroke-width="1.2" />
   <rect x="40" y="12" width="9" height="9" fill="#27C93F" stroke="#30363D" stroke-width="1.2" />
 
-  <!-- Status Chip -->
-  <rect x="540" y="9" width="85" height="17" fill="#161B22" stroke="#30363D" stroke-width="1.2" />
-  <text class="badge-text" x="582.5" y="18" text-anchor="middle" dominant-baseline="central">PROFILE.SH</text>
+
 
   <!-- Typing Text -->
   <text class="text" dominant-baseline="middle" x="50%" text-anchor="middle">
