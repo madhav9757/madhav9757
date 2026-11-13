@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="290" viewBox="0 0 480 290">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="275" viewBox="0 0 480 275">
   <defs>
     <style>
       .label { fill: #000000; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
@@ -7,14 +7,14 @@
   </defs>
 
   <!-- Outer Brutalist Hard Shadow -->
-  <rect x="6" y="6" width="470" height="280" fill="#000000" />
+  <rect x="6" y="6" width="470" height="265" fill="#000000" />
 
   <!-- Outer Container Card -->
-  <rect x="2" y="2" width="470" height="280" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <rect x="2" y="2" width="470" height="265" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
 
   <!-- Row 1 -->
   
-    <g transform="translate(17, 18)">
+    <g transform="translate(17, 16)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -30,7 +30,7 @@
       <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">139</text>
     </g>
   
-    <g transform="translate(247, 18)">
+    <g transform="translate(247, 16)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -48,7 +48,7 @@
 
   <!-- Row 2 -->
   
-    <g transform="translate(17, 70)">
+    <g transform="translate(17, 66)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -64,7 +64,7 @@
       <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">1.4K</text>
     </g>
   
-    <g transform="translate(247, 70)">
+    <g transform="translate(247, 66)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -82,7 +82,7 @@
 
   <!-- Row 3 -->
   
-    <g transform="translate(17, 122)">
+    <g transform="translate(17, 116)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -98,7 +98,7 @@
       <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">92.5%</text>
     </g>
   
-    <g transform="translate(247, 122)">
+    <g transform="translate(247, 116)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -116,7 +116,7 @@
 
   <!-- Row 4 -->
   
-    <g transform="translate(17, 174)">
+    <g transform="translate(17, 166)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -132,7 +132,7 @@
       <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">15</text>
     </g>
   
-    <g transform="translate(247, 174)">
+    <g transform="translate(247, 166)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -150,7 +150,7 @@
 
   <!-- Row 5 -->
   
-    <g transform="translate(17, 226)">
+    <g transform="translate(17, 216)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->
@@ -166,7 +166,7 @@
       <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">22 DAYS</text>
     </g>
   
-    <g transform="translate(247, 226)">
+    <g transform="translate(247, 216)">
       <!-- Brutalist Hard Shadow -->
       <rect x="3" y="3" width="207" height="35" fill="#000000" />
       <!-- Main Card -->

@@ -375,7 +375,7 @@ function renderSvgContent(stats, theme = 'dark') {
     const streakIcon = '<path d="M8.22 1.034a.75.75 0 0 0-.44 0C5.1 1.77 3 4.25 3 7.5a5 5 0 0 0 10 0c0-3.25-2.1-5.73-4.78-6.466ZM8 14A3.5 3.5 0 0 1 4.5 7.5c0-2.3 1.4-4.14 3.5-4.88 2.1.74 3.5 2.58 3.5 4.88A3.5 3.5 0 0 1 8 14Z"/>';
     const rankIcon = '<path d="M4 1.75C4 .784 4.784 0 5.75 0h4.5C11.216 0 12 .784 12 1.75V2h1.5A2.5 2.5 0 0 1 16 4.5v1A4.5 4.5 0 0 1 11.5 10h-.07a5.502 5.502 0 0 1-4.86 3.93A2 2 0 0 0 8 15a2 2 0 0 0 1.43-1.07A5.502 5.502 0 0 1 4.57 10H4.5A4.5 4.5 0 0 1 0 5.5v-1A2.5 2.5 0 0 1 2.5 2H4v-.25ZM2.5 3.5c-.552 0-1 .448-1 1v1c0 1.657 1.343 3 3 3h.5V3.5h-2.5Zm11 4.5c1.657 0 3-1.343 3-3v-1c0-.552-.448-1-1-1H13v6.5h.5Z"/>';
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="290" viewBox="0 0 480 290">
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="275" viewBox="0 0 480 275">
   <defs>
     <style>
       .label { fill: ${c.label}; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
@@ -384,30 +384,30 @@ function renderSvgContent(stats, theme = 'dark') {
   </defs>
 
   <!-- Outer Brutalist Hard Shadow -->
-  <rect x="6" y="6" width="470" height="280" fill="${c.shadow}" />
+  <rect x="6" y="6" width="470" height="265" fill="${c.shadow}" />
 
   <!-- Outer Container Card -->
-  <rect x="2" y="2" width="470" height="280" fill="${c.bg}" stroke="${c.border}" stroke-width="${isDark ? '2' : '2.5'}" />
+  <rect x="2" y="2" width="470" height="265" fill="${c.bg}" stroke="${c.border}" stroke-width="${isDark ? '2' : '2.5'}" />
 
   <!-- Row 1 -->
-  ${card(17, 18, c.metrics.stars, starIcon, 'STARS', stats.stars)}
-  ${card(247, 18, c.metrics.contribs, contribIcon, 'TOTAL CONTRIBS', stats.contribs)}
+  ${card(17, 16, c.metrics.stars, starIcon, 'STARS', stats.stars)}
+  ${card(247, 16, c.metrics.contribs, contribIcon, 'TOTAL CONTRIBS', stats.contribs)}
 
   <!-- Row 2 -->
-  ${card(17, 70, c.metrics.commits, commitIcon, 'COMMITS', stats.commits)}
-  ${card(247, 70, c.metrics.prs, prIcon, 'PULL REQUESTS', stats.prs)}
+  ${card(17, 66, c.metrics.commits, commitIcon, 'COMMITS', stats.commits)}
+  ${card(247, 66, c.metrics.prs, prIcon, 'PULL REQUESTS', stats.prs)}
 
   <!-- Row 3 -->
-  ${card(17, 122, c.metrics.merged, mergedIcon, 'MERGE RATE', stats.prs_merged)}
-  ${card(247, 122, c.metrics.issues, issueIcon, 'ISSUES', stats.issues || stats.issues_closed)}
+  ${card(17, 116, c.metrics.merged, mergedIcon, 'MERGE RATE', stats.prs_merged)}
+  ${card(247, 116, c.metrics.issues, issueIcon, 'ISSUES', stats.issues || stats.issues_closed)}
 
   <!-- Row 4 -->
-  ${card(17, 174, c.metrics.repos, repoIcon, 'REPOS CONTRIB', stats.repos_contributed)}
-  ${card(247, 174, c.metrics.reviews, reviewIcon, 'CODE REVIEWS', stats.reviews)}
+  ${card(17, 166, c.metrics.repos, repoIcon, 'REPOS CONTRIB', stats.repos_contributed)}
+  ${card(247, 166, c.metrics.reviews, reviewIcon, 'CODE REVIEWS', stats.reviews)}
 
   <!-- Row 5 -->
-  ${card(17, 226, c.metrics.streak, streakIcon, 'MAX STREAK', stats.streak)}
-  ${card(247, 226, c.metrics.rank, rankIcon, 'DEV RANK', stats.dev_rank)}
+  ${card(17, 216, c.metrics.streak, streakIcon, 'MAX STREAK', stats.streak)}
+  ${card(247, 216, c.metrics.rank, rankIcon, 'DEV RANK', stats.dev_rank)}
 
 </svg>`;
 }
