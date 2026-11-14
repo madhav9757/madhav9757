@@ -28,7 +28,7 @@
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">STARS</text>
       <!-- Value -->
-      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">139</text>
+      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">140</text>
     </g>
   
     <g transform="translate(247, 16)">
