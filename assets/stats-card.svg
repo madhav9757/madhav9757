@@ -81,7 +81,7 @@
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">PULL REQUESTS</text>
       <!-- Value -->
-      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">106</text>
+      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">107</text>
     </g>
 
   <!-- Row 3 -->
@@ -100,7 +100,7 @@
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">MERGE RATE</text>
       <!-- Value -->
-      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">92.5%</text>
+      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">91.6%</text>
     </g>
   
     <g transform="translate(247, 116)">
@@ -117,7 +117,7 @@
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">ISSUES</text>
       <!-- Value -->
-      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">11</text>
+      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">12</text>
     </g>
 
   <!-- Row 4 -->
@@ -136,7 +136,7 @@
       <!-- Label -->
       <text class="label" x="45" y="18" dominant-baseline="central">REPOS CONTRIB</text>
       <!-- Value -->
-      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">15</text>
+      <text class="value" x="197" y="18" text-anchor="end" dominant-baseline="central">16</text>
     </g>
   
     <g transform="translate(247, 166)">
